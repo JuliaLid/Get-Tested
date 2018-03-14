@@ -10,5 +10,6 @@
 * Server is set up with all required dependencies 
 * HTML templates are set up
     * Materialize library is linked 
-* Have an empty img folder in case we want images    
+* Have an empty img folder in case we want images
+* Server will not start up until there are models to sync up
  
