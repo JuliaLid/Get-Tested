@@ -4,6 +4,7 @@ $(document).ready(function(){
     //if we add other pages with inputs, we'll need to set up another file 
 
     jQuery.noConflict();
+    $('.collapsible').collapsible();
     Survey.StylesManager.applyTheme("default");
 
 
