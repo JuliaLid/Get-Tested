@@ -29,3 +29,11 @@ body {
   background-color: white;
 
 }
+
+#disclaimer {
+  width: 500px !important;;
+}
+
+h5 {
+  padding-left: 10px;
+}

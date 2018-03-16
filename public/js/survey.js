@@ -4,7 +4,12 @@ $(document).ready(function(){
     //if we add other pages with inputs, we'll need to set up another file 
 
     jQuery.noConflict();
+    //accordion control
     $('.collapsible').collapsible();
+    //feature button control
+    $('.tap-target').tapTarget('open');
+    $('.tap-target').tapTarget('close');
+    //survey.js fucntions
     Survey.StylesManager.applyTheme("default");
 
 
