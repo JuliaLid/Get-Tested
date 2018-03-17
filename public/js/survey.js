@@ -54,6 +54,18 @@ $(document).ready(function(){
                     },
                     {
                         type: "checkbox",
+                        name: "sex_last",
+                        title: "When was the last time you had sex?" ,
+                        isRequired: true,
+                        colCount: 1,
+                        choices: [
+                            "Less than a week ago",
+                            "1 week - 3 months",
+                            "More than 3 months ago"
+                        ]
+                    },
+                    {
+                        type: "checkbox",
                         name: "sex_type",
                         title: "What type of sex do you have? (check all that apply)" ,
                         isRequired: true,
