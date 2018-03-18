@@ -27,6 +27,8 @@ nav .brand-logo {
   background-color: white;
 
 }
+
+
   .bgimg { 
     background-image: url("../img/backgroundcolor.png");
     height: 100%; 
@@ -63,13 +65,15 @@ body {
 main {
     flex: 1 0 auto;
   }  
+
 #disclaimer {
   width: 500px !important;;
 }
 
 h5 {
   padding-left: 10px;
-}
+
 .page-footer {
   background-color: #00ccff;
 }
+

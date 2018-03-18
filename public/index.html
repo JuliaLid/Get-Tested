@@ -19,6 +19,7 @@
 
     <title>TeSTeD</title>
 </head>
+
 <body class ="bgimg gradient">
     <nav class="N/A transparent" role="navigation">
         <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"><img src="img/testedlogo.png" height="82"></a>
@@ -44,11 +45,28 @@
         <div class="row"></div>
             <div class="col s6 offset-s10"></div>
                 <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('open')"></i>Open tap target</a>
+
             <!-- Element Showed -->
             <div class="fixed-action-btn" style = "bottom: 45px; right:24px;">
                     <a id="menu" class="btn btn-floating btn-large cyan" ><i class="material-icons">announcement</i></a>
             </div>   
             
+
+
+            <!-- Tap Target Structure -->   
+            <div class="tap-target-wrapper" style="right:-348px; bottom:-348px; position:fixed;">   
+                <div class="tap-target cyan" data-activates="menu">
+                        <div id="disclaimer" class="tap-target-content white-text">
+                                <h5>Disclaimer</h5>
+                                <p class="white-text">Many testing and vaccination options are available, but can differ based upon your age, gender, and sexual orientation. In order to provide you with tailored testing and vaccination options, questions about age, gender, and sexual orientation help to provide appropriate suggestions for your care. You should always consult with your healthcare provider with any questions or concerns about your health and these tests and vaccinations.</p>
+                              </div>
+                        </div>
+                    </div>
+        </div>
+
+           
+
+
 
             <!-- Tap Target Structure -->
             <div class="tap-target-wrapper" style="right:-348px; bottom:-348px; position:fixed;">   
@@ -77,6 +95,7 @@
             
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 </body>
 </html>
 
