@@ -25,6 +25,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/result.html"));
   });
 
+  // resources route loads resources.html
+  app.get("/resources", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/resources.html"));
+  });
+
 
   ///Additional Routes - ONLY to be used after MVP is completed  
   //==================================================
@@ -33,9 +38,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/clinic.html"));
   });
 
-// resources route loads resources.html
-  app.get("/resources", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/resources.html"));
-  });
+
+ 
 
 };

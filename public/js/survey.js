@@ -9,6 +9,8 @@ $(document).ready(function(){
     //feature button control
     $('.tap-target').tapTarget('open');
     $('.tap-target').tapTarget('close');
+
+ 
     //survey.js fucntions
     Survey.StylesManager.applyTheme("default");
 

@@ -24,8 +24,8 @@
     <nav class="N/A transparent" role="navigation">
         <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"><img src="img/testedlogo.png" height="82"></a>
             <ul class="right hide-on-med-and-down link-choices">
-                <li><a href="survey.html">Take the Survey</a></li>
-                <li><a href="resources.html">Learn More</a></li>
+                <li><a href="/survey">Take the Survey</a></li>
+                <li><a href="/resources">Learn More</a></li>
             </ul>
         </div>
     </nav>
@@ -37,60 +37,37 @@
                     <h3 class="header col s8 offset-s2 white-text intro-text"><span class="flow-text">If you are having sex, it’s important to get tested at least once a year. Take our short quiz to find out what tests you should ask your provider for based on what kind of sex you’re having. </span></h3>
                   </div>
                   <div class="row center">
-                    <a href="survey.html" id="download-button" class="col s4 offset-s4 btn-large waves-effect waves">Take the Test</a>
+                    <a href="/survey" id="download-button" class="col s4 offset-s4 btn-large waves-effect waves">Take the Survey</a>
                   </div>
             </div>
-        </div>
-            <div id="container bsa"> 
-        <div class="row"></div>
-            <div class="col s6 offset-s10"></div>
-                <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('open')"></i>Open tap target</a>
-
-            <!-- Element Showed -->
-            <div class="fixed-action-btn" style = "bottom: 45px; right:24px;">
-                    <a id="menu" class="btn btn-floating btn-large cyan" ><i class="material-icons">announcement</i></a>
-            </div>   
-            
-
-
-            <!-- Tap Target Structure -->   
-            <div class="tap-target-wrapper" style="right:-348px; bottom:-348px; position:fixed;">   
-                <div class="tap-target cyan" data-activates="menu">
-                        <div id="disclaimer" class="tap-target-content white-text">
-                                <h5>Disclaimer</h5>
-                                <p class="white-text">Many testing and vaccination options are available, but can differ based upon your age, gender, and sexual orientation. In order to provide you with tailored testing and vaccination options, questions about age, gender, and sexual orientation help to provide appropriate suggestions for your care. You should always consult with your healthcare provider with any questions or concerns about your health and these tests and vaccinations.</p>
-                              </div>
-                        </div>
-                    </div>
-        </div>
-
-           
-
-
-
-            <!-- Tap Target Structure -->
-            <div class="tap-target-wrapper" style="right:-348px; bottom:-348px; position:fixed;">   
-                <div class="tap-target cyan" data-activates="menu">
-                        <div id="disclaimer" class="tap-target-content white-text">
-                                <h5>Disclaimer</h5>
-                                <p class="white-text">Many testing and vaccination options are available, but can differ based upon your age, gender, and sexual orientation. In order to provide you with tailored testing and vaccination options, questions about age, gender, and sexual orientation help to provide appropriate suggestions for your care. You should always consult with your healthcare provider with any questions or concerns about your health and these tests and vaccinations.</p>
-                              </div>
-                        </div>
-                    </div>
         </div>
 
     </main>
     <footer class="page-footer">
         <div class="container">
             <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">© 2018 TeSTeD</h5>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <p class="white-text">You can use rows and columns here to organize your footer content.</p>
+                <div class="col l6 s12">
+                    <h5 class="white-text">© 2018 TeSTeD</h5>
+                </div>
+                <div>
+                    <a class="white-text right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github fa-lg"></i>Git Hub Repo</a>
+                </div>
+                <div class="fixed-action-btn" >
+                    <a id="menu" class="btn btn-floating btn-large" onclick="$('.tap-target').tapTarget('open')" ><i class="material-icons">announcement</i></a>
+                </div>   
               </div>
             </div>
         </div>
+
+        <!-- Disclaimer Structure -->
+        <div class="tap-target-wrapper">   
+                <div class="tap-target cyan" data-activates="menu">
+                        <div id="disclaimer" class="tap-target-content white-text">
+                                <h5>Disclaimer</h5>
+                                <p class="white-text">Many testing and vaccination options are available but can differ based upon your age, gender, and sexual orientation. That's why we ask those questions. You should always consult with your healthcare provider with any questions or concerns about your health and these tests.</p>
+                        </div>
+                </div>
+            </div>
     </footer>
             
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
