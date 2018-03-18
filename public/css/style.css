@@ -72,8 +72,12 @@ main {
 
 h5 {
   padding-left: 10px;
-
+  font-size: 1rem;
+}
 .page-footer {
   background-color: #00ccff;
 }
 
+#menu {
+  background-color: #ff00ff;
+}
