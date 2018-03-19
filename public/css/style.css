@@ -81,3 +81,12 @@ h5 {
 #menu {
   background-color: #ff00ff;
 }
+
+#map-container {
+  margin-top: 50px;
+}
+#map {
+  height: 400px;
+  width: 100%;
+  padding-top: 30px;
+ }

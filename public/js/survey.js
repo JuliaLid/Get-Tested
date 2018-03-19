@@ -5,12 +5,7 @@ $(document).ready(function(){
 
     jQuery.noConflict();
     //accordion control
-    $('.collapsible').collapsible();
-    //feature button control
-    $('.tap-target').tapTarget('open');
-    $('.tap-target').tapTarget('close');
-
- 
+    
     //survey.js fucntions
     Survey.StylesManager.applyTheme("default");
 
