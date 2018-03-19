@@ -10,29 +10,32 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <!-- Link place holders -->
-
+    <!-- Misc -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700" rel="stylesheet">
-
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> Google Font if needed -->
     <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
-
     <title>TeSTeD</title>
 </head>
 
 <body class ="bgimg gradient">
     <nav class="N/A transparent" role="navigation">
-        <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo"><img src="img/testedlogo.png" height="82"></a>
+        <div class="nav-wrapper">
+            <a id="logo-container" href="#" class="brand-logo">
+                <img src="img/testedlogo.png" height="82">
+            </a>
             <ul class="right hide-on-med-and-down link-choices">
-                <li><a href="/survey">Take the Survey</a></li>
-                <li><a href="/resources">Learn More</a></li>
+                <li>
+                    <a href="/survey">Take the Survey</a>
+                </li>
+                <li>
+                    <a href="/resources">Learn More</a>
+                </li>
             </ul>
         </div>
     </nav>
     <main>
         <div class="section no-pad-bot" id="index-banner">
             <div class="container site-content">
-                <br><br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br>  
                   <div class="row center">
                     <h3 class="header col s8 offset-s2 white-text intro-text"><span class="flow-text">If you are having sex, it’s important to get tested at least once a year. Take our short quiz to find out what tests you should ask your provider for based on what kind of sex you’re having. </span></h3>
                   </div>
@@ -44,30 +47,25 @@
 
     </main>
     <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">© 2018 TeSTeD</h5>
+        <div class="row">
+            <div class="col s6 footerleft">
+                <h5 class="white-text">© 2018 TESTED</h5>
+            </div>
+            <div class="col s5">
+                <h5><a class="white-text right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github fa-lg"></i>Git Hub Repo</a></h5>
+            </div>
+            <div class="fixed-action-btn" >
+                <a id="menu" class="btn btn-floating btn-large" onclick="$('.tap-target').tapTarget('open')" ><i class="material-icons">announcement</i></a>
+            </div>   
+        </div>
+        <div class="tap-target-wrapper">   
+            <div class="tap-target cyan" data-activates="menu">
+                <div id="disclaimer" class="tap-target-content white-text">
+                    <h5>Disclaimer</h5>
+                    <p class="white-text">Many testing and vaccination options are available but can differ based upon your age, gender, and sexual orientation. That's why we ask those questions. You should always consult with your healthcare provider with any questions or concerns about your health and these tests.</p>
                 </div>
-                <div>
-                    <a class="white-text right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github fa-lg"></i>Git Hub Repo</a>
-                </div>
-                <div class="fixed-action-btn" >
-                    <a id="menu" class="btn btn-floating btn-large" onclick="$('.tap-target').tapTarget('open')" ><i class="material-icons">announcement</i></a>
-                </div>   
-              </div>
             </div>
         </div>
-
-        <!-- Disclaimer Structure -->
-        <div class="tap-target-wrapper">   
-                <div class="tap-target cyan" data-activates="menu">
-                        <div id="disclaimer" class="tap-target-content white-text">
-                                <h5>Disclaimer</h5>
-                                <p class="white-text">Many testing and vaccination options are available but can differ based upon your age, gender, and sexual orientation. That's why we ask those questions. You should always consult with your healthcare provider with any questions or concerns about your health and these tests.</p>
-                        </div>
-                </div>
-            </div>
     </footer>
             
     <script
@@ -76,7 +74,6 @@
   crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script> 
-
 </body>
 </html>
 
