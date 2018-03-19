@@ -56,6 +56,28 @@ function geocodeAddress(address, geocoder, resultsMap) {
   });
 }
 
+var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Red Door</h1>'+
+            '<div id="bodyContent">'+
+            '<p></p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+          position: address1,
+          map: map,
+          title: 'Red Door'
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+      
 
 //Adding marker popups
 
