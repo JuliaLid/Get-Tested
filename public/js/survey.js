@@ -7,8 +7,10 @@ $(document).ready(function(){
     //accordion control
     
     //survey.js fucntions
-    Survey.StylesManager.applyTheme("default");
+    // Survey.StylesManager.applyTheme("default");
 
+    Survey.Survey.cssType = "bootstrap";
+    
 
             var json = {
                 questions: [
