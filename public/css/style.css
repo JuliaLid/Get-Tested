@@ -40,6 +40,11 @@ nav .brand-logo {
   background: linear-gradient(135deg, rgba(255,0, 255, .25),#0000ff 50%, #ff00ff 100%); ;
   opacity: .66;
   }*/
+
+.resultpic {
+  background-image: url("../img/bluebackground.png");  
+}
+
 nav {
   box-shadow: none;
 }
@@ -74,8 +79,37 @@ h5 {
   padding-left: 10px;
   font-size: 1rem;
 }
+
+.cliniclocations, .cardtitle {
+  color: #0d47a1;
+  font-size: 16px;
+}
+.collapsible-header{
+  color: #673ab7;
+}
+.blueresults{
+  color: #0d47a1;
+}
+.collapsible-body{
+  background-color: #ede7f6;
+}
+.lightresults {
+  background-color: #e3f2fd;
+}
 .page-footer {
-  background-color: #00ccff;
+  background-color: #26d2fd;
+  padding-left: 1rem;
+  margin-left: 0;
+}
+#menu {
+  background-color: #ff00ff;
+}
+.copyright{
+  float: left;
+}
+.gitlink{
+  float: right;
+  margin-right: 30px;
 }
 
 #menu {
@@ -88,8 +122,10 @@ h5 {
 #map {
   height: 400px;
   width: 100%;
+  border: #0d47a1 2px solid;
 }
 
 #map h5 {
-  color: #ff00ff;
+  color:#0d47a1;
+  font-weight: bold;
 }
