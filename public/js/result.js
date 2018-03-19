@@ -1,101 +1,73 @@
-// function initMap() {
-//     var uluru = {lat: 44.9726731, lng: -93.2651067};
-//     var map = new google.maps.Map(document.getElementById('map'), {
-//       zoom: 15,
-//       center: uluru
-//     });
-//     var marker = new google.maps.Marker({
-//       position: uluru,
-//       map: map
-//     });
-//   }
-
-  /*
- * declare map as a global variable
- */
-var map;
-var geocoder;
-var markers = new Array();
-
-var address1 = "525 Portland Ave S Minneapolis, MN, USA";
-var address2 = "915 S 7th St Minneapolis, MN, USA";
-var address3 = "41 N 12th St Minneapolis, MN, USA";
-
-$(document).on('ready', initMap);
+var clinics =[
+ ["Red Door Services", 44.974529, -93.262505, "525 Portland Ave Street", "Minneapolis, MN","612-543-5555"],
+ ["Hennepin County Medical Center Positive Care", 44.970922,-93.25964, "915 S 7th Street", "Minneapolis, MN","612-873-9988"],
+ ["Youth Link Health and Wellness Clinic",44.976367, -93.28202,"41 N 12th Street", "Minneapolis, MN", "612-252-1200"]
+];
 
 function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: {
-      lat: 44.9726731,
-      lng: 15-93.2651067
-    }
-  });
-  var geocoder = new google.maps.Geocoder();
-
-  geocodeAddress(address1, geocoder, map);
-  geocodeAddress(address2, geocoder, map);
-  geocodeAddress(address3, geocoder, map);
+  var myOptions = {
+    center: new google.maps.LatLng(44.9726731, -93.2651067),
+    zoom: 13,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map"),
+      myOptions);
+  setMarkers(map,clinics)
 }
 
-function geocodeAddress(address, geocoder, resultsMap) {
-  geocoder.geocode({
-    'address': address
-  }, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-      markers.push(marker);
-    //   updateZoom(resultsMap);
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
+function setMarkers(map,clinics){
+    var marker;
+
+    for (var i = 0; i < clinics.length; i++) {  
+      var name = clinics[i][0];
+      var lat = clinics[i][1];
+      var long = clinics[i][2];
+      var add1 =  clinics[i][3];
+      var add2 =  clinics[i][4];
+      var phone =  clinics[i][5];
+
+    latlngset = new google.maps.LatLng(lat, long);
+
+    var marker = new google.maps.Marker({  
+		  map: map, 
+		  title: name,
+		  position: latlngset,
+		  icon:pinSymbol("#ff00ff")  
+    });
+    
+	map.setCenter(marker.getPosition());
+	
+	function pinSymbol(color) {
+    return {
+        path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+        fillColor: color,
+        fillOpacity: 1,
+        strokeColor: '#000',
+        strokeWeight: 2,
+        scale: 1,
+   };
 }
 
-var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Red Door</h1>'+
-            '<div id="bodyContent">'+
-            '<p></p>'+
-            '</div>'+
-            '</div>';
+    var content = '<div id="info">'+"<h5>" +name +"</h5>" + "<p>" + add1 + "</p>" + "<p>" + add2 + "</p>"+ "<p>" + "<br>"+ phone + "</p>"+ "</div>";     
 
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
+    var infowindow = new google.maps.InfoWindow()
 
-        var marker = new google.maps.Marker({
-          position: address1,
-          map: map,
-          title: 'Red Door'
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-      
+    google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+        return function() {
+          infowindow.setContent(content);
+          infowindow.open(map,marker);
+        };
+    })(marker,content,infowindow)); 
+  }
+}
 
-//Adding marker popups
-
-// function updateZoom(resultsMap) {
-//   var bounds = new google.maps.LatLngBounds();
-//   for (i = 0; i < markers.length; i++) {
-//     bounds.extend(markers[i].getPosition());
-//   }
-
-//   resultsMap.fitBounds(bounds);
-// }
-
-// var infowindow = new google.maps.InfoWindow({
-//     content:"Hello World!"
-//     });
-  
-//   google.maps.event.addListener(marker, 'click', function() {
-//     infowindow.open(map,marker);
-//     });
-
-
+function pinSymbol(color) {
+    return {
+        path: 'M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z M -2,-30 a 2,2 0 1,1 4,0 2,2 0 1,1 -4,0',
+        fillColor: color,
+        fillOpacity: 1,
+        strokeColor: '#000',
+        strokeWeight: 2,
+        scale: 1,
+   };
+}

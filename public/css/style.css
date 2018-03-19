@@ -82,11 +82,14 @@ h5 {
   background-color: #ff00ff;
 }
 
-#map-container {
-  margin-top: 50px;
+#map-container, #results {
+  margin-top: 5rem;
 }
 #map {
   height: 400px;
   width: 100%;
-  padding-top: 30px;
- }
+}
+
+#map h5 {
+  color: #ff00ff;
+}
