@@ -3,7 +3,7 @@
     "username": "root",
     "password": null,
     "database": "tbd",
-    "host": "stdtest_db",
+    "host": "STDTEST_db",
     "dialect": "mysql"
   },
   "test": {

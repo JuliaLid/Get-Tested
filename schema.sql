@@ -1,0 +1,5 @@
+CREATE DATABASE STDTEST_db; 
+
+USE STDTEST_db; 
+
+

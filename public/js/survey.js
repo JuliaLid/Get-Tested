@@ -4,6 +4,14 @@ $(document).ready(function(){
     //if we add other pages with inputs, we'll need to set up another file 
 
     jQuery.noConflict();
+    //accordion control
+    $('.collapsible').collapsible();
+    //feature button control
+    $('.tap-target').tapTarget('open');
+    $('.tap-target').tapTarget('close');
+
+ 
+    //survey.js fucntions
     Survey.StylesManager.applyTheme("default");
 
 
@@ -44,6 +52,18 @@ $(document).ready(function(){
                         choices: [
                             "Yes",
                             "No"
+                        ]
+                    },
+                    {
+                        type: "checkbox",
+                        name: "sex_last",
+                        title: "When was the last time you had sex?" ,
+                        isRequired: true,
+                        colCount: 1,
+                        choices: [
+                            "Less than a week ago",
+                            "1 week - 3 months",
+                            "More than 3 months ago"
                         ]
                     },
                     {
