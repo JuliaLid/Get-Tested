@@ -68,11 +68,23 @@ $(document).ready(function(){
             onComplete:sendDataToServer
         });
 
-
         function sendDataToServer(survey) {
-            var resultAsString = JSON.stringify(survey.data);
-            console.log(resultAsString);///send Ajax request to your web server.
-            // window.location = '/result';
+            // var resultAsString = JSON.stringify(survey.data);
+            var sexAnswers;
+        
+            if (survey.data.sex_female){
+                   surveyAnswers =  survey.data.sex_female;
+            } else {
+                surveyAnswers =  survey.data.sex_male;
+            };
+   
+             var surveyAnswers = {
+                 gender:survey.data.gender,
+                 sexType: JSON.stringify(surveyAnswers)
+             };
+      
+            $.post("/api/survey",surveyAnswers,function(){
+                 window.location= '/result';
+            });
         }
-
 });

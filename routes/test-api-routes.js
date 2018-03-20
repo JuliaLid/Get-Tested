@@ -12,12 +12,19 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/api/results", function(req, res) {
+  
+
+  app.post("/api/survey", function(req, res) {
 
    //Include switch functions here
 
+   db.StdTest.create ({
+    test_name: "Throat Swab",
+    test_explanation: "Based on your answers, we recommend that you ask your provider for a throat swab. If you are having oral sex (putting a penis in your mouth) then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test."
+  });
+
     db.StdTest.findAll({
-      include: [db.User]
+      // include: [db.User]
     }).then(function(result) {
       res.json(result);
     });

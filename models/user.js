@@ -2,37 +2,44 @@ module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
     	
     	gender: {
-    		type: Sequelize.STRING
+        type: DataTypes.STRING,
+        allowNull: false
     	},
         sexType1: {
-            type: Sequelize.STRING
+          type: DataTypes.STRING,
+          allowNull: true
         },
         sexType2: {
-            type: Sequelize.STRING
+          type: DataTypes.STRING,
+          allowNull: true
         },
     	sexType3: {
-    		type: Sequelize.STRING
+        type: DataTypes.STRING,
+        allowNull: true
     	},
     	sexType4: {
-    		type: Sequelize.STRING
+        type: DataTypes.STRING,
+        allowNull: true
     	},
     	sexType5: {
-    		type: Sequelize.STRING
+        type: DataTypes.STRING,
+        allowNull: true
     	},
     	sexType6: {
-    		type: Sequelize.STRING
+    		  type: DataTypes.STRING,
+          allowNull: true
     	}
     	
     });
 
-    User.associate = function(models) {
+  //   User.associate = function(models) {
     
-    User.belongsTo(models.StdTest, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  //   User.belongsTo(models.StdTest, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
 
 
     return User;
