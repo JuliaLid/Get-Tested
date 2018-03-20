@@ -12,8 +12,10 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  app.get("/results", function(req, res) {
-   
+  app.get("/api/results", function(req, res) {
+
+   //Include switch functions here
+
     db.StdTest.findAll({
       include: [db.User]
     }).then(function(result) {
@@ -24,7 +26,7 @@ module.exports = function(app) {
 
   
 
-  app.post("/tests", function(req, res) {
+  app.post("/api/tests", function(req, res) {
 
    console.log(req.body);
     db.StdTest.create({

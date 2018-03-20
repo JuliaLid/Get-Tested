@@ -1,52 +1,35 @@
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
-    	gender_identity: {
-    		type: Sequelize.ENUM,
-    		values: ['Male', 'Female', 'Trans-female', 'Trans-male']
-    	},
-    	partner_identity: {
-    		type: Sequelize.ENUM,
-    		values: ['Male', 'Female', 'Trans-female', 'Trans-male']
-    	},
-    	last_sex: {
-    		type: Sequelize.ENUM,
-    		values: ['< week', '1 week - 3 months', '> 3 months']
-    	},
-    	multiple_partners: {
+    	
+    	male: {
     		type: Sequelize.BOOLEAN
     	},
-    	sex_act: {
-    		type: Sequelize.ENUM,
-    		values: ['Oral', 'Anal', 'Vaginal']
-    	},
-    	last_test: {
-    		type: Sequelize.ENUM,
-    		values: ['< 12 months', '> 12 months', 'never']
-    	},
-    	symptoms: {
+        female: {
+            type: Sequelize.BOOLEAN
+        },
+        oral_rec: {
+            type: Sequelize.BOOLEAN
+        },
+    	oral_ins: {
     		type: Sequelize.BOOLEAN
     	},
-    	burning: {
+    	vaginal_ins: {
     		type: Sequelize.BOOLEAN
     	},
-    	itching: {
+    	vaginal_rec: {
     		type: Sequelize.BOOLEAN
     	},
-    	discharge: {
+    	anal_ins: {
     		type: Sequelize.BOOLEAN
     	},
-    	pain: {
-    		type: Sequelize.BOOLEAN
-    	},
-    	flu_symptoms: {
+    	anal_rec: {
     		type: Sequelize.BOOLEAN
     	}
     	
     });
 
     User.associate = function(models) {
-    // We're saying that a Post should belong to an Author
-    // A Post can't be created without an Author due to the foreign key constraint
+    
     User.belongsTo(models.StdTest, {
       foreignKey: {
         allowNull: false
@@ -54,11 +37,6 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-
-    
-    
-    //sequelize model for the stdtest database goes here
-    //current db name is stdtest_db
 
     return User;
   };

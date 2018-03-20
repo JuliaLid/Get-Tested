@@ -13,10 +13,10 @@ var db = require("../models");
 module.exports = function(app) {
 
  
-  app.post("/survey", function(req, res) {
+  app.post("/api/survey", function(req, res) {
 
    console.log(req.body);
-    db.user.create({
+    db.User.create({
       gender_identity: req.body.gender_identity,
       partner_identity: req.body.partner_identity,
       last_sex: req.body.last_sex,
