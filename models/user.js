@@ -1,29 +1,26 @@
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define("User", {
     	
-    	male: {
-    		type: Sequelize.BOOLEAN
+    	gender: {
+    		type: Sequelize.STRING
     	},
-        female: {
-            type: Sequelize.BOOLEAN
+        sexType1: {
+            type: Sequelize.STRING
         },
-        oral_rec: {
-            type: Sequelize.BOOLEAN
+        sexType2: {
+            type: Sequelize.STRING
         },
-    	oral_ins: {
-    		type: Sequelize.BOOLEAN
+    	sexType3: {
+    		type: Sequelize.STRING
     	},
-    	vaginal_ins: {
-    		type: Sequelize.BOOLEAN
+    	sexType4: {
+    		type: Sequelize.STRING
     	},
-    	vaginal_rec: {
-    		type: Sequelize.BOOLEAN
+    	sexType5: {
+    		type: Sequelize.STRING
     	},
-    	anal_ins: {
-    		type: Sequelize.BOOLEAN
-    	},
-    	anal_rec: {
-    		type: Sequelize.BOOLEAN
+    	sexType6: {
+    		type: Sequelize.STRING
     	}
     	
     });
