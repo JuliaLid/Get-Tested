@@ -93,6 +93,7 @@ nav {
 .btn-large {
   background: #ff00ff;
   color: white;
+  font-size: 20px;
  }
  /*Main page disclaimer  */
 #disclaimer {
@@ -172,9 +173,9 @@ h5 {
   font-family: 'Roboto', sans-serif;
 }
 /* Drop-down windows */
-#sq_102i, #sq_106i {
+/* #sq_102i, #sq_106i {
   width: 50%;
-}
+} */
 /* Overriding Bootstrap styling of the survey */
 .card-footer {
   padding: .75rem 1.25rem;
