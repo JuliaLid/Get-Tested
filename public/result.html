@@ -4,67 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/assets/css/reset.css" type="text/css" />
+    <link rel="stylesheet" href="css/reset.css" type="text/css" />
     <!-- Materialize Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
     <!-- Link place holders -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> Google Font if needed -->
     <!-- <link rel="icon" type="image/png" href="/assets/*/*" sizes="16x16" /> If using FAVICON --> 
     <title>Result</title>
 </head>
-<body>
-        <header>
-        
-           <nav class="header light-blue accent-4">
-                   <div class="nav-wrapper">
-                       <a href="#" class="brand-logo">teSTeD</a>
-                       <ul class="right">
-                           <li><a href="#">Survey</a></li>
-                       </ul>
-                   </div>
-               </nav>
-        </header>   
-        <main>
-            
-           <div class="container">
-               <div class="row">
-                   <div class="col l6 ">
-                        <ul class="collapsible" data-collapsible="accordion">
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">assignment</i>Throat Swab</div>
-                                <div class="collapsible-body"><span>Based on your answers, we recommend that you ask your provider for a throat swab. If you are having oral sex (putting a penis in your mouth) then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test. </span></div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">assignment</i>Rectal Swab</div>
-                                <div class="collapsible-body"><span>Based on your answers, we recommend that you ask your provider for a rectal swab. If you are having anal sex (putting a penis in your butt) then it’s important to look for gonorrhea and chlamydia in the rectum because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your butt, it will not show up on a urine test. 
-                                </span></div>
-                            </li>
-                            <li>
-                                <div class="collapsible-header"><i class="material-icons">assignment</i>Urethral Swab</div>
-                                <div class="collapsible-body"><span>A urethral swab is only recommended for males or penis-bodied individuals who are experiencing symptoms such as discharge. Based on your answers, we recommend that you ask your provider for a urethral swab so that they can prescribe you the appropriate antibiotic. 
-                                </span></div>
-                            </li>
-                        </ul>
-                   </div>
-               </div>
-               <div class="row">
-                       <div class="col l6 ">
-                           
-                       </div>
-                   </div>
-           </div>
-       </main>  
-
-       <footer >
-         
-       </footer>
+<body class ="bgimg resultpic">
+    <nav class="N/A transparent" role="navigation">
+        <div class="nav-wrapper"><a id="logo-container" href="/index" class="brand-logo"><img src="img/testedlogo.png" height="82"></a>
+            <ul class="right hide-on-med-and-down link-choices">
+                <li><a href="/survey">Take the Survey</a></li>
+                <li><a href="/resources">Learn More</a></li>
+            </ul>
+        </div>
+    </nav>  
+    <main>
+        <div class="container">
+            <div class="row">
+                <div id="results" class="col s12 m6 ">
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <div class="collapsible-header blueresults"><i class="material-icons">assignment</i>Throat Swab</div>
+                            <div class="collapsible-body lightresults"><span>Based on your answers, we recommend that you ask your provider for a throat swab. If you are having oral sex (putting a penis in your mouth) then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test. </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header blueresults"><i class="material-icons">assignment</i>Rectal Swab</div>
+                            <div class="collapsible-body lightresults"><span>Based on your answers, we recommend that you ask your provider for a rectal swab. If you are having anal sex (putting a penis in your butt) then it’s important to look for gonorrhea and chlamydia in the rectum because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your butt, it will not show up on a urine test. 
+                            </span></div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header blueresults"><i class="material-icons">assignment</i>Urethral Swab</div>
+                            <div class="collapsible-body lightresults"><span>A urethral swab is only recommended for males or penis-bodied individuals who are experiencing symptoms such as discharge. Based on your answers, we recommend that you ask your provider for a urethral swab so that they can prescribe you the appropriate antibiotic. 
+                            </span></div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="map-container" class="col s12 l6 ">
+                    <div id="map"></div>
+                </div>
+                
+            </div>
+            <!-- <div class="row">
+                    <div class="col l6 ">
+                        <div id="map"></div>
+                    </div>
+                </div> -->
+        </div>
+    </main>  
+    <footer class="page-footer">
+        <div class="row">
+            <div class="col s6 footerleft">
+                <h5 class="white-text">© 2018 TESTED</h5>
+            </div>
+            <div class="col s5">
+                <h5><a class="white-text right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github fa-lg"></i>Git Hub Repo</a></h5>
+            </div>
+              
+        </div>
+    </footer>
+      
    
-       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+       <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-       <script src="/assets/js/survey.js"></script> 
+       <script async defer
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAqlrC7gHV_LgkKmKMF7sXetOVuuoxATI&callback=initMap">
+       </script>
+       <script src="js/result.js"></script> 
    
    </body>
 </html>

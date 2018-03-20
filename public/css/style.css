@@ -1,3 +1,4 @@
+/* Main styling */
 body {
     display: flex;
     min-height: 100vh;
@@ -8,7 +9,22 @@ body {
 main {
     flex: 1 0 auto;
   }
-
+  h3 {
+    color: #00ccff;
+  }
+  h5 {
+    padding-left: 10px;
+    font-size: 1rem;
+  }
+  h4 {
+    color: white;
+  }
+  h6{
+    font-size: 24px;
+    color: #673ab7;
+  }
+/* End main styling */
+  /* Nav Logo */
 nav .brand-logo {
     position: absolute;
     color: #fff;
@@ -17,7 +33,25 @@ nav .brand-logo {
     padding-left: 1rem;
 }
 
-#container {
+nav {
+  box-shadow: none;
+}
+
+.brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 2.1rem;
+    margin-left: 30px;
+}
+
+.link-choices{
+  margin-right: 30px;
+}
+/* End nav bar */
+
+/* IS IT USED BY ANY PAGES??? */
+/* #container {
   width: 900px;
   margin: 30px auto;
   display: grid;
@@ -26,9 +60,9 @@ nav .brand-logo {
   grid-gap: 10px;
   background-color: white;
 
-}
+} */
 
-
+/* Page background image styling */
   .bgimg { 
     background-image: url("../img/backgroundcolor.png");
     height: 100%; 
@@ -40,44 +74,145 @@ nav .brand-logo {
   background: linear-gradient(135deg, rgba(255,0, 255, .25),#0000ff 50%, #ff00ff 100%); ;
   opacity: .66;
   }*/
-nav {
-  box-shadow: none;
-}
-.brand-logo {
-    position: absolute;
-    color: #fff;
-    display: inline-block;
-    font-size: 2.1rem;
-    margin-left: 30px;
-}
-.link-choices{
-  margin-right: 30px;
-}
+
+  .indexpic{
+    background-image: url("../img/backgroundcolor.png");
+ }
+ .resourcespic {
+   background-image: url("../img/backgroundred.png");
+ }
+ .surveypic {
+   background-image: url("../img/greenbackground.png");
+ }
+ .resultpic {
+   background-image: url("../img/bluebackground.png");  
+ }
+
+/* END Page background image styling */
+
 .btn-large {
   background: #ff00ff;
   color: white;
+  font-size: 20px;
  }
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-main {
-    flex: 1 0 auto;
-  }  
-
+ /*Main page disclaimer  */
 #disclaimer {
-  width: 500px !important;;
+  width: 500px !important;
 }
 
 h5 {
   padding-left: 10px;
   font-size: 1rem;
 }
-.page-footer {
-  background-color: #00ccff;
-}
+/* End main page disclaimer */
 
+/* Results page  */
+.cliniclocations, .cardtitle {
+  color: #0d47a1;
+  font-size: 16px;
+}
+.collapsible-header{
+  color: #673ab7;
+}
+.blueresults{
+  color: #0d47a1;
+}
+.collapsible-body{
+  background-color: #ede7f6;
+}
+.lightresults {
+  background-color: #e3f2fd;
+}
+.page-footer {
+  background-color: #26d2fd;
+  padding-left: 1rem;
+  margin-left: 0;
+}
 #menu {
   background-color: #ff00ff;
+}
+.copyright{
+  float: left;
+}
+.gitlink{
+  float: right;
+  margin-right: 30px;
+}
+
+.gitlink a {
+  color: grey;
+  font-size: 1rem;
+}
+
+/* Google Map on Results page */
+
+#map-container, #results {
+  margin-top: 5rem;
+}
+#map {
+  height: 400px;
+  width: 100%;
+  border: #0d47a1 2px solid;
+}
+
+#map h5 {
+  color:#0d47a1;
+  font-weight: bold;
+}
+/* End Results Page */
+
+/* Survey page */
+
+#survey {
+  margin: 5rem auto;
+}
+#surveyCard {
+  width: 80%;
+  margin:0 auto;
+  background-color:white;
+  font-family: 'Roboto', sans-serif;
+}
+/* Drop-down windows */
+/* #sq_102i, #sq_106i {
+  width: 50%;
+} */
+/* Overriding Bootstrap styling of the survey */
+.card-footer {
+  padding: .75rem 1.25rem;
+  background-color: white !important;
+  border-top: white !important;
+
+}
+/* Survey button */
+.sv_complete_btn {
+  background-color: #26d2fd;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+/* Survey page footer sytling */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.nav-link {
+  font-size: 1.5rem;
+  color: #fff;
+  display: block;
+  padding: 20px;
+  cursor: pointer;
+}
+/* Survey submission text */
+.card-block h3 {
+  text-align: center;
 }

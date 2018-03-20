@@ -21,8 +21,13 @@ require("./routes/api-routes.js")(app);
 
 // Syncing the sequelize models and starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {    /////////////// I had to remove force:true for some rea
+   /////////////// I had to remove force:true for some rea
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
-});
+
+// db.sequelize.sync({ force: true }).then(function() {    /////////////// I had to remove force:true for some rea
+//   app.listen(PORT, function() {
+//     console.log("App listening on PORT " + PORT);
+//   });
+// });

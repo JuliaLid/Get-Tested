@@ -5,15 +5,12 @@ $(document).ready(function(){
 
     jQuery.noConflict();
     //accordion control
-    $('.collapsible').collapsible();
-    //feature button control
-    $('.tap-target').tapTarget('open');
-    $('.tap-target').tapTarget('close');
-
- 
+    
     //survey.js fucntions
-    Survey.StylesManager.applyTheme("default");
+    // Survey.StylesManager.applyTheme("default");
 
+    Survey.Survey.cssType = "bootstrap";
+    
 
             var json = {
                 questions: [
@@ -22,100 +19,37 @@ $(document).ready(function(){
                         name: "gender",
                         title: "How do you identify your gender?",
                         isRequired: true,
-                        colCount: 2,
                         choices: [
                             "Female",
-                            "Male",
-                            "Trans-Female",
-                            "Trans-Male"
-                        ]
+                            "Male"]
                     },
-                    {
-                        type: "checkbox",
-                        name: "sex_partner",
-                        title: "Whom do you have sex with? (check all that apply)" ,
-                        isRequired: true,
+                    {   type: "checkbox",
+                        name: "sex_female",
+                        title: "What type of sex are you having? (check all that apply)" ,
+                        visibleIf: "{gender}='Female'",
                         colCount: 2,
                         choices: [
-                            "Female",
-                            "Male",
-                            "Trans-Female",
-                            "Trans-Male"
-                        ]
-                    },
-                    {
-                        type: "dropdown",
-                        name: "multiple_partners",
-                        title: "Do you sleep with multiple partners?",
-                        isRequired: true,
-                        colCount: 0,
-                        choices: [
-                            "Yes",
-                            "No"
-                        ]
-                    },
-                    {
-                        type: "checkbox",
-                        name: "sex_last",
-                        title: "When was the last time you had sex?" ,
-                        isRequired: true,
-                        colCount: 1,
-                        choices: [
-                            "Less than a week ago",
-                            "1 week - 3 months",
-                            "More than 3 months ago"
-                        ]
-                    },
-                    {
-                        type: "checkbox",
-                        name: "sex_type",
-                        title: "What type of sex do you have? (check all that apply)" ,
-                        isRequired: true,
-                        colCount: 2,
-                        choices: [
-                            "Oral",
                             "Vaginal",
-                            "Anal"
+                            "Anal",
+                            "Receiving oral sex",
+                            "Giving oral sex to a man"
                         ]
                     },
-                    {
-                        type: "radiogroup",
-                        name: "std_testing",
-                        title: "When was the last time you got tested for STDs?",
-                        isRequired: true,
-                        colCount: 1,
-                        choices: [
-                            "More than a year ago",
-                            "Less than a year ago",
-                            "I've never been tested"
-                    ]
-                    },
-                    {
-                        type: "dropdown",
-                        name: "symptoms_checker",
-                        title: "Do you currently have any symptoms?",
-                        isRequired: true,
-                        colCount: 0,
-                        choices: [
-                            "Yes",
-                            "No"
-                        ]
-                    },
-                    {
-                        type: "checkbox",
-                        name: "symptoms",
-                        title: "Please check all applicable symptoms" ,
-                        visibleIf: "{symptoms_checker}='Yes'",
+                    {   type: "checkbox",
+                        name: "sex_male",
+                        title: "What type of sex are you having? (check all that apply)" ,
+                        visibleIf: "{gender}='Male'",
                         colCount: 2,
                         choices: [
-                            "Burning",
-                            "Itching",
-                            "Discharge",
-                            "Pain",
-                            "Flu-like symptoms"
+                            "Vaginal",
+                            "Receiving oral sex",
+                            "Giving oral sex to a man",
+                            "Anal sex with a man (top)",
+                            "Anal sex with a man (bottom)",
+                            "Anal sex with a woman",
+                           
                         ]
-                    },
-
+                    }
                 ]
             };
 
@@ -137,7 +71,8 @@ $(document).ready(function(){
 
         function sendDataToServer(survey) {
             var resultAsString = JSON.stringify(survey.data);
-        console.log(resultAsString); //send Ajax request to your web server.
+            console.log(resultAsString);///send Ajax request to your web server.
+            // window.location = '/result';
         }
 
 });
