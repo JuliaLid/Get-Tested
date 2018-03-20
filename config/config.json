@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "tbd",
-    "host": "STDTEST_db",
+    "database": "STDTEST_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

@@ -15,24 +15,25 @@ module.exports = function(app) {
  
   app.post("/api/survey", function(req, res) {
 
+  //  console.log(req);
    console.log(req.body);
+   console.log(req.body.gender);
+  var sexType = JSON.parse(req.body.sexType);
+ 
     db.User.create({
-      gender_identity: req.body.gender_identity,
-      partner_identity: req.body.partner_identity,
-      last_sex: req.body.last_sex,
-      multiple_partners: req.body.multiple_partners,
-      sex_act: req.body.sex_act,
-      last_test: req.body.last_test,
-      symptoms: req.body.symptoms,
-      burning: req.body.burning,
-      itching: req.body.itching,
-      discharge: req.body.discharge,
-      pain: req.body.pain,
-      flu_symptoms: req.body.flu_symptoms
-      
+      gender: req.body.gender,
+      sexType1: sexType[0],
+      sexType2: sexType[1] ,
+      sexType3:sexType[2] ,
+      sexType4:sexType[3] ,
+      sexType5:sexType[4]  ,
+      sexType6:sexType[5] 
+            
     })
     .then(function(result) {
-      res.json(result);
+      console.log(result);
+      console.log(res.json(result));
+      // res.json(result);
     });
     
   });
