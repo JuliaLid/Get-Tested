@@ -84,7 +84,7 @@ $(document).ready(function(){
              };
       
             $.post("/api/survey",surveyAnswers,function(){
-                 window.location.href = '/result';
+                 window.location= '/result';
             });
         }
 });

@@ -3,8 +3,8 @@ module.exports = function(sequelize, DataTypes) {
     	test_name: {
     		type: DataTypes.STRING,
       },
-      test_description: {
-        type: DataTypes.STRING
+      test_explanation: {
+        type: DataTypes.TEXT
       }
       
     });
