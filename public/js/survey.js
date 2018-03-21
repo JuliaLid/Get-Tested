@@ -63,7 +63,7 @@ $(document).ready(function(){
         //Redirect to the results page after the survey is submitted    
         survey.onComplete.add(function(result) {
             window.location.href = "/result";
-            // getTestResults();
+            getTestResults();
           });
 
         function sendDataToServer(survey) {
@@ -95,6 +95,7 @@ $(document).ready(function(){
        //Functions to display results!!!!!!!! 
        //This function is called after the survey post.
         function getTestResults() {
+            console.log("I'm a triggered on redirect");
             $.get("/api/result", function(data) {
             //   var rowsToAdd = [];
             //   for (var i = 0; i < data.length; i++) {
@@ -102,8 +103,9 @@ $(document).ready(function(){
             //   }
             //   generateTestCards(rowsToAdd);
             //   nameInput.val("");
+                console.log(data);
             });
-            console.log(data);
+            
          }
 
          //this function should be called with each data to build the accordion 

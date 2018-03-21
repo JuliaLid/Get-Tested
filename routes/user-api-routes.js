@@ -4,7 +4,8 @@ var db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
- 
+//  var testRecommendation; //refactor it into a function later
+var testArray;
   app.post("/api/survey", function(req, res) {
 		var returnedTests;
 	//Function to return all tests. It calls a helper function that check whether the test table has been created. If not, it will create it.
@@ -44,15 +45,18 @@ module.exports = function(app) {
 		//switch function to route to male or female functions	
 		switch (gender) {
 			case "Male":
-				var testArray = maleResults(allSexTypes);
-				console.log("I'm the tests that the user needs " + testArray);
+				testArray = maleResults(allSexTypes);
+				// console.log(typeof testArray);
+				// console.log("I'm the tests that the user needs " + testArray);
+				console.log(testArray.length);
+				console.log(typeof testArray);
 				break;
 		
 			// case "female":
 			//   	femaleResults();
 			//   	break;
 		}
-
+		//WORKING FOR LOOP TO QUERY THE DATABASE
 		for (var i = 0; i < returnedTests.length; i++) {
 			for (var j = 0; j < testArray.length; j++) {
 				if (returnedTests[i] === testArray[j]) {
@@ -64,26 +68,41 @@ module.exports = function(app) {
 					.then(function(result) {
 					// $('div:contains("'+daysArray[j]+'")').append("<div class='assignment'>"+courseHwork[i]+" - appended</div>");
 					console.log("WORKINGGGGGGGGG");
-					var testRecommendation =JSON.parse(JSON.stringify(result));
-					console.log(testRecommendation);
-					console.log(typeof testRecommendation);
+					var testRecommendation =JSON.parse(JSON.stringify(result)); //!!!Recommended tests are here 
+					// console.log(testRecommendation);
+					// console.log(typeof testRecommendation);
 					});
 				}
 			}
 
 		}
-			console.log("I'm the tests that the user needs " + testArray);
+			// console.log("I'm the tests that the user needs " + testArray);
+			
 			
 		}); //end of sequelize CREATE method
-
-		// .then(function(dbBurger) {
-		// 	res.json({ id: dbBurger.insertId });
-		// 	})
-		// 	.catch(function(err) {
-		// 	res.json(err);
-		// });
-		res.testRecommendation;
+	
 	}); // end of API POST 
+	console.log("line 88 " + testArray);
+	
+	//old function to reference
+	// app.get("/api/result", function(req, res) {
+	// 	// Here we add an "include" property to our options in our findOne query
+	// 	// We set the value to an array of the models we want to include in a left outer join
+	// 	// In this case, just db.Post
+	// 	console.log("I'm a GET request");
+	// 	console.log("line 95 " + testArray);
+	// 	db.StdTest.findAll({
+	// 		where:{
+	// 			test_name: testArray[0]
+	// 		}
+	// 	})
+	// 	.then(function(result) {
+	// 		// console.log(result);
+	// 		// res.json(result);
+	// 	});
+	//   });
+		
+
 
  //============================================================================================
  //=============Helper Fucntions==============================================================
@@ -137,6 +156,8 @@ module.exports = function(app) {
 			}
 			//push all required tests to the arry and return to switch function
 		testArray.push(test1,test2,test3,test4);
+		console.log("line 166 :" + testArray);
+		console.log(typeof testArray);
 		return testArray;
 	};
 
