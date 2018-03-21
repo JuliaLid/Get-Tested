@@ -70,22 +70,22 @@ module.exports = function(app) {
 //values: ['ThroatSwab', 'RectalSwab', 'UrineSample', 'FingerStick']
 
 var resultsMale = function() {
-  if (sex_act === "Vaginal") {
+  if (sexType1 === "Vaginal") {
       return UrineSample
   }
-  else if (sex_act === "Anal sex with a woman") {
-      return UrineSample, FingerStick
+  else if (sexType2 === "Giving oral sex to a man") {
+      return UrineSample, HIVMale
   }
-  else if (sex_act === "Giving oral sex to a man") {
-      return ThroatSwab
+  else if (sexType3 === "Anal sex with a man (bottom)") {
+      return HIVMale, RectalSwab
   }
-  else if (sex_act === "Anal sex with man (top)") {
-    return UrineSample, FingerStick
+  else if (sexType4 === "Receiving oral sex") {
+    return UrineSample, HIVMale
   }
-  else if (sex_act === "Anal sex with man (bottom)"){
-    return FingerStick, RectalSwab
+  else if (sexType5 === "Anal sex with a man (top)'"){
+    return HIVMale, RectalSwab
   }
-  else if (sex_act === "Receiving oral sex"){
+  else if (sexType6 === "Anal sex with a woman'"){
     return UrineSample
   }
 }
