@@ -6,12 +6,13 @@ var db = require("../models");
 module.exports = function(app) {
  
   app.post("/api/survey", function(req, res) {
-	
+		var returnedTests;
 	//Function to return all tests. It calls a helper function that check whether the test table has been created. If not, it will create it.
 		db.StdTest.findAll({})
 		.then(function(result) {
-			var returnTests = createTestsList(result);
-			console.log("All available tests " + returnTests);
+			// var returnTests = createTestsList(result);//It's in local scope
+			returnedTests = createTestsList(result);//It's in local scope
+			// console.log("All available tests " + returnTests);
 		});
 		
 	//Function to create a User model based on the request that has been passed	
@@ -38,28 +39,13 @@ module.exports = function(app) {
 			//pushing all se types into array to pass to the swicth function
 			var allSexTypes = [];
 			allSexTypes.push(sexType1,sexType2,sexType3,sexType4,sexType5,sexType6);
-		
-			//   for (var i = 0; i < testsList.length; i++) {
-			// 	for (var j = 0; j < testArray.length; j++) {
-			// 		if (testsList[i] === testArray[j]) {
-			// 			db.StdTest.findAll({
-			// 				where:{
-			// 					test_name: testArray[j]
-			// 				}
-			// 			})
-			// 			.then(function(result) {
-			// 			// $('div:contains("'+daysArray[j]+'")').append("<div class='assignment'>"+courseHwork[i]+" - appended</div>");
-			// 			console.los("WORKINGGGGGGGGG" + result);
-			// 			});
-			// 		}
-			// 	}
-
-			// }	
+			
 			// res.json(result);
 		//switch function to route to male or female functions	
 		switch (gender) {
 			case "Male":
 				var testArray = maleResults(allSexTypes);
+				console.log("I'm the tests that the user needs " + testArray);
 				break;
 		
 			// case "female":
@@ -67,9 +53,37 @@ module.exports = function(app) {
 			//   	break;
 		}
 
+		for (var i = 0; i < returnedTests.length; i++) {
+			for (var j = 0; j < testArray.length; j++) {
+				if (returnedTests[i] === testArray[j]) {
+					db.StdTest.findAll({
+						where:{
+							test_name: testArray[j]
+						}
+					})
+					.then(function(result) {
+					// $('div:contains("'+daysArray[j]+'")').append("<div class='assignment'>"+courseHwork[i]+" - appended</div>");
+					console.log("WORKINGGGGGGGGG");
+					var testRecommendation =JSON.parse(JSON.stringify(result));
+					console.log(testRecommendation);
+					console.log(typeof testRecommendation);
+					});
+				}
+			}
+
+		}
 			console.log("I'm the tests that the user needs " + testArray);
-		}); //end of response function
-	});
+			
+		}); //end of sequelize CREATE method
+
+		// .then(function(dbBurger) {
+		// 	res.json({ id: dbBurger.insertId });
+		// 	})
+		// 	.catch(function(err) {
+		// 	res.json(err);
+		// });
+		res.testRecommendation;
+	}); // end of API POST 
 
  //============================================================================================
  //=============Helper Fucntions==============================================================
