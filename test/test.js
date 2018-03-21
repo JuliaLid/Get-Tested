@@ -15,7 +15,8 @@ describe("api routes", function() {
 });
 
 //putting & does not work, taking out comma does not work, saying just FingerStick does not work
-//
+//Having same issue with any result that has two tests coming back from the array ... not sure what to do will ask TAs
+
 
 describe("api routes", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
@@ -29,7 +30,6 @@ describe("api routes", function() {
     })
 });
 
-//Having same issue with any result that has two coming back from the array ... not sure what to do will ask TAs
 
 describe("api routes", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
@@ -70,4 +70,8 @@ describe("api routes", function() {
     })
 });
 
+
+//bring up to the team --- we need to have 2 Male HIV results - 1 for Male/Female and another for Male/Male
+
+// Also we never really considered if someone has sex w both male and female ... maybe we can figure that out if there's time
 
