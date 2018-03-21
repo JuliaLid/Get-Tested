@@ -67,28 +67,29 @@ module.exports = function(app) {
   
 };
 
-//values: ['ThroatSwab', 'RectalSwab', 'UrineSample', 'FingerStick']
+var testType = ['ThroatSwab', 'RectalSwab', 'UrineSample', 'FingerStick']
 
-var resultsMale = function() {
+var resultsMale = function(sex_act) {
   if (sex_act === "Vaginal") {
-      return UrineSample
+      return testType[2];
   }
   else if (sex_act === "Anal sex with a woman") {
-      return UrineSample, FingerStick
+      return testType[2,3]
   }
   else if (sex_act === "Giving oral sex to a man") {
-      return ThroatSwab
+      return testType[0]
   }
   else if (sex_act === "Anal sex with man (top)") {
-    return UrineSample, FingerStick
+    return testType[3,2]
   }
   else if (sex_act === "Anal sex with man (bottom)"){
-    return FingerStick, RectalSwab
+    return testType[3,1]
   }
   else if (sex_act === "Receiving oral sex"){
-    return UrineSample
+    return testType[2]
   }
-}
+};
+
 var resultsFemale = function(){
   if (sex_act === "Vaginal"){
     return UrineSample, FingerStick
@@ -102,5 +103,7 @@ var resultsFemale = function(){
   else if(sex_act === "Receiving oral sex"){
     return UrineSample
   }
-}
+};
+
+module.exports = resultsMale, resultsFemale;
 
