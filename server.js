@@ -26,7 +26,7 @@ require("./routes/user-api-routes.js")(app);
   //   console.log("App listening on PORT " + PORT);
   // });
 
-db.sequelize.sync({ force: true }).then(function() {    /////////////// I had to remove force:true for some rea
+db.sequelize.sync({}).then(function() {    /////////////// I had to remove force:true for some rea
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

@@ -26,8 +26,132 @@ module.exports = function(app) {
     })
     .then(function(result) {
       console.log(result.dataValues);
-      // console.log(res.json(result));
+       // console.log(res.json(result));
       // res.json(result);
+     
+      var gender = result.dataValues.gender;
+      var sexType1 = result.dataValues.sexType1;
+      var sexType2 = result.dataValues.sexType2;
+      var sexType3 = result.dataValues.sexType3;
+      var sexType4 = result.dataValues.sexType4;
+      var sexType5 = result.dataValues.sexType5;
+      var sexType6 = result.dataValues.sexType6;
+	switch (gender) {
+  	case 'Male':
+  		if (sexType1 || sexType2 || sexType3 || sexType4 || sexType5 || sexType6 == "Vaginal") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id: 3
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(JSON.parse(JSON.stringify(result)));
+    		});
+  		}
+    	else if (sexType1 || sexType2 || sexType3 || sexType4 || sexType5 || sexType6 == "Anal sex with a woman") {
+  			db.StdTest.findAll({
+  				where: {
+   						 [Op.or]: [{id: 3}, {id: 4}]
+   						 
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(JSON.parse(JSON.stringify(result)));
+    		});
+  		}
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Giving oral sex to a man") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id:1
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Anal sex with man (top)") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id:3,
+   						 id:4
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}	
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Anal sex with man (bottom)") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id:4,
+   						 id:2
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}	
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Receiving oral sex") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id:3
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}	
+    	break;
+  	case 'Female':
+  		if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Vaginal") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id: 3,
+   						 id: 5
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Giving oral sex to a man") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id: 1
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Anal") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id: 2,
+   						 id: 5
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}
+  		else if (sexType[0] || sexType[1] || sexType[2] || sexType[3] || sexType[4] || sexType[5] == "Receiving oral sex") {
+  			db.StdTest.findAll({
+  				where: {
+   						 id: 3
+ 					   }
+  			}).then(function(result) {
+      			//res.json(result);
+      			console.log(result.dataValues);
+    		});
+  		}
+    
+    break;
+  	default:
+    console.log('Sorry, no user input');
+}
+
+     
     });
     
   });
