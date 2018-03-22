@@ -47,9 +47,9 @@ var testArray;
 				testArray = maleResults(allSexTypes);
 				break;
 		
-			// case "female":
-			//   	femaleResults();
-			//   	break;
+			case "Female":
+			  	testArray = femaleResults(allSexTypes);
+			  	break;
 		}
 
 		db.StdTest.findAll({
@@ -124,11 +124,46 @@ var testArray;
 			}
 			//push all required tests to the arry and return to switch function
 		testArray.push(test1,test2,test3,test4);
-		console.log("line 166 :" + testArray);
-		console.log(typeof testArray);
 		return testArray;
 	};
 
+	//Function to determine tests needed for a male user
+	function femaleResults(allSexTypes){
+		var testArray= [];
+			//Urine test
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test1;
+				if (allSexTypes[i]==="Vaginal" || allSexTypes[i]=== "Receiving oral sex"){
+					test1 = "Urine Sample";
+				}
+			};
+			
+			//HIV Male
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test2;
+				if (allSexTypes[i] === "Anal" || allSexTypes[i] === "Vaginal" ){
+					test2 = "HIV Female";
+				}
+			}
+			//Throat Swab
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test3;
+				if (allSexTypes[i] === "Giving oral sex to a man"){
+					test3 = "Throat Swab";
+				}
+			}
+			//Rectal Swab
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test4;
+				if (allSexTypes[i] === "Anal"){
+					test4 = "Rectal Swab";
+				}
+			}
+			//push all required tests to the arry and return to switch function
+		testArray.push(test1,test2,test3,test4);
+		console.log("line 166 :", testArray);
+		return testArray;
+	};
 	//function to create std model if needed
 	function createTestTable(){
 		var tests =  db.StdTest.bulkCreate ([{
