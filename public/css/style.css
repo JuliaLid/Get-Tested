@@ -215,4 +215,6 @@ h5 {
 /* Survey submission text */
 .card-block h3 {
   text-align: center;
+  color: #fff;
+  /* I had to use this color to make survey.js text invisible */
 }

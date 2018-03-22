@@ -6,14 +6,14 @@ var db = require("../models");
 module.exports = function(app) {
 //  var testRecommendation; //refactor it into a function later
 var testArray;
+
   app.post("/api/survey", function(req, res) {
 		var returnedTests;
-	//Function to return all tests. It calls a helper function that check whether the test table has been created. If not, it will create it.
+	//Function to create all tests if needed. It calls a helper function that check whether the test table has been created. If not, it will create it.
+
 		db.StdTest.findAll({})
 		.then(function(result) {
-			// var returnTests = createTestsList(result);//It's in local scope
-			returnedTests = createTestsList(result);//It's in local scope
-			// console.log("All available tests " + returnTests);
+			 createTestsList(result);//It's in local scope
 		});
 		
 	//Function to create a User model based on the request that has been passed	
@@ -41,71 +41,44 @@ var testArray;
 			var allSexTypes = [];
 			allSexTypes.push(sexType1,sexType2,sexType3,sexType4,sexType5,sexType6);
 			
-			// res.json(result);
 		//switch function to route to male or female functions	
 		switch (gender) {
 			case "Male":
 				testArray = maleResults(allSexTypes);
-				// console.log(typeof testArray);
-				// console.log("I'm the tests that the user needs " + testArray);
-				console.log(testArray.length);
-				console.log(typeof testArray);
 				break;
 		
 			// case "female":
 			//   	femaleResults();
 			//   	break;
 		}
-		//WORKING FOR LOOP TO QUERY THE DATABASE
-		for (var i = 0; i < returnedTests.length; i++) {
-			for (var j = 0; j < testArray.length; j++) {
-				if (returnedTests[i] === testArray[j]) {
-					db.StdTest.findAll({
-						where:{
-							test_name: testArray[j]
-						}
-					})
-					.then(function(result) {
-					// $('div:contains("'+daysArray[j]+'")').append("<div class='assignment'>"+courseHwork[i]+" - appended</div>");
-					console.log("WORKINGGGGGGGGG");
-					var testRecommendation =JSON.parse(JSON.stringify(result)); //!!!Recommended tests are here 
-					// console.log(testRecommendation);
-					// console.log(typeof testRecommendation);
-					});
+
+		db.StdTest.findAll({
+				where:{
+					test_name: testArray
 				}
-			}
-
-		}
-			// console.log("I'm the tests that the user needs " + testArray);
-			
-			
+			}).then (function(result){
+				res.json(result);
+			});
 		}); //end of sequelize CREATE method
-	
 	}); // end of API POST 
-	console.log("line 88 " + testArray);
+
 	
-	//old function to reference
-	// app.get("/api/result", function(req, res) {
-	// 	// Here we add an "include" property to our options in our findOne query
-	// 	// We set the value to an array of the models we want to include in a left outer join
-	// 	// In this case, just db.Post
-	// 	console.log("I'm a GET request");
-	// 	console.log("line 95 " + testArray);
-	// 	db.StdTest.findAll({
-	// 		where:{
-	// 			test_name: testArray[0]
-	// 		}
-	// 	})
-	// 	.then(function(result) {
-	// 		// console.log(result);
-	// 		// res.json(result);
-	// 	});
-	//   });
+	//GET function in case we need it.
+	app.get("/api/result", function(req, res) {
 		
-
-
- //============================================================================================
- //=============Helper Fucntions==============================================================
+		db.StdTest.findAll({
+			where:{
+				test_name: "Throat Swab"
+			}
+		})
+		.then(function(result) {
+			// console.log(result[0].dataValues);
+			// return res.json(result[0].dataValues);//apply thi to post
+		});
+	  });
+		
+ 
+ //=============Helper Functions===================
  //function to check if the table with tests has been created
 	function createTestsList(result){
 		var testsList=[]; 	
@@ -114,12 +87,7 @@ var testArray;
 			createTestTable(); 
 			var tests=JSON.parse(JSON.stringify(result));
 			testsList.push(tests[0].test_name,tests[1].test_name,tests[2].test_name,tests[3].test_name,tests[4].test_name)
-			return testsList;
-		} else {
-			var tests=JSON.parse(JSON.stringify(result));
-			testsList.push(tests[0].test_name,tests[1].test_name,tests[2].test_name,tests[3].test_name,tests[4].test_name)
-			return testsList;
-		}
+		} 
 	};
 
 //Function to determine tests needed for a male user
@@ -180,5 +148,4 @@ var testArray;
 			test_explanation: "Based on your answers, we recommend that you ask your provider for a rapid HIV test. While risk for male/female sex and HIV is relatively small in the US, it is still a good idea to get checked at least once a year. If you have multiple partners, you may want to get tested twice a year. Rapid HIV tests can be as fast as 1 minute and are 99% accurate for any exposure that was over 3 months ago.If you are worried about a possible exposure that occurred in less than 72 hours (3 days) you should talk to your provider about PEP, a medication that prevents HIV if you were exposed. Think morning after pill but for HIV. If you have a partner who is living with HIV, we recommend that you talk to your provider about PrEP, a daily medication that prevents HIV. Think birth control but for HIV."
 		}]);
 	}
-
 };
