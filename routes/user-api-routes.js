@@ -6,6 +6,8 @@ var db = require("../models");
 module.exports = function(app) {
 //  var testRecommendation; //refactor it into a function later
 var testArray;
+var julia = [];
+// v testRecommendation;
   app.post("/api/survey", function(req, res) {
 		var returnedTests;
 	//Function to return all tests. It calls a helper function that check whether the test table has been created. If not, it will create it.
@@ -48,15 +50,14 @@ var testArray;
 				testArray = maleResults(allSexTypes);
 				// console.log(typeof testArray);
 				// console.log("I'm the tests that the user needs " + testArray);
-				console.log(testArray.length);
-				console.log(typeof testArray);
+				
 				break;
 		
 			// case "female":
 			//   	femaleResults();
 			//   	break;
 		}
-		//WORKING FOR LOOP TO QUERY THE DATABASE
+	//	WORKING FOR LOOP TO QUERY THE DATABASE
 		for (var i = 0; i < returnedTests.length; i++) {
 			for (var j = 0; j < testArray.length; j++) {
 				if (returnedTests[i] === testArray[j]) {
@@ -66,41 +67,45 @@ var testArray;
 						}
 					})
 					.then(function(result) {
-					// $('div:contains("'+daysArray[j]+'")').append("<div class='assignment'>"+courseHwork[i]+" - appended</div>");
+					
 					console.log("WORKINGGGGGGGGG");
-					var testRecommendation =JSON.parse(JSON.stringify(result)); //!!!Recommended tests are here 
-					// console.log(testRecommendation);
-					// console.log(typeof testRecommendation);
+					var testRecommendation =JSON.parse(JSON.stringify(result));
+					julia.push(testRecommendation); //!!!Recommended tests are here 
+					console.log("line 74 ",julia);
+					return julia;					// console.log(typeof testRecommendation);
 					});
 				}
 			}
 
 		}
-			// console.log("I'm the tests that the user needs " + testArray);
-			
+		console.log("line 81 ", julia);
+			// console.log("I'm the tests that the user needs " , testRecommendation);
+			// return res.json(result)
+			// return res.json(result)
+			// res.result;
 			
 		}); //end of sequelize CREATE method
-	
+		
 	}); // end of API POST 
 	console.log("line 88 " + testArray);
 	
 	//old function to reference
-	// app.get("/api/result", function(req, res) {
-	// 	// Here we add an "include" property to our options in our findOne query
-	// 	// We set the value to an array of the models we want to include in a left outer join
-	// 	// In this case, just db.Post
-	// 	console.log("I'm a GET request");
-	// 	console.log("line 95 " + testArray);
-	// 	db.StdTest.findAll({
-	// 		where:{
-	// 			test_name: testArray[0]
-	// 		}
-	// 	})
-	// 	.then(function(result) {
-	// 		// console.log(result);
-	// 		// res.json(result);
-	// 	});
-	//   });
+	app.get("/api/result", function(req, res) {
+		// Here we add an "include" property to our options in our findOne query
+		// We set the value to an array of the models we want to include in a left outer join
+		// In this case, just db.Post
+		// console.log("I'm a GET request");
+		// console.log("line 95 " + testArray);
+		db.StdTest.findAll({
+			where:{
+				test_name: "Throat Swab"
+			}
+		})
+		.then(function(result) {
+			// console.log(result[0].dataValues);
+			return res.json(result[0].dataValues);//apply thi to post
+		});
+	  });
 		
 
 

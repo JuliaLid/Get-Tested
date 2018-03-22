@@ -62,7 +62,9 @@ $(document).ready(function(){
 
         //Redirect to the results page after the survey is submitted    
         survey.onComplete.add(function(result) {
-            window.location.href = "/result";
+            console.log("line 65: ", result);
+           
+            // window.location.href = "/result";
             getTestResults();
           });
 
@@ -88,6 +90,9 @@ $(document).ready(function(){
 
             //trying a new callback
             $.post("/api/survey",surveyAnswers)
+            .then(function() {
+                console.log("Line 93 -I work");
+              }); 
                
         }
 
@@ -96,14 +101,14 @@ $(document).ready(function(){
        //This function is called after the survey post.
         function getTestResults() {
             console.log("I'm a triggered on redirect");
-            $.get("/api/result", function(data) {
+            $.get("/api/result", function(result) {
             //   var rowsToAdd = [];
             //   for (var i = 0; i < data.length; i++) {
             //     rowsToAdd.push(createAuthorRow(data[i]));
             //   }
             //   generateTestCards(rowsToAdd);
             //   nameInput.val("");
-                console.log(data);
+                console.log("line 111 :",result); //this came from user-api line 102
             });
             
          }
