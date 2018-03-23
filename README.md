@@ -1,4 +1,4 @@
-# Get Tested - Full-Stack App using Node, Express, and Sequelize
+# Tested - Full-Stack App using Node, Express, and Sequelize
 
 ![logo_image](https://user-images.githubusercontent.com/31745567/37856214-3f921b84-2ec1-11e8-8551-f9a0e01192db.png)
 
