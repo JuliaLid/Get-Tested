@@ -218,3 +218,11 @@ h5 {
   color: #fff;
   /* I had to use this color to make survey.js text invisible */
 }
+
+#accordion card:last-of-type  {
+  margin-bottom: 50px;
+}
+
+#surveyResult h4 {
+  color: #673ab7;
+}

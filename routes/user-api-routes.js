@@ -47,9 +47,9 @@ var testArray;
 				testArray = maleResults(allSexTypes);
 				break;
 		
-			// case "female":
-			//   	femaleResults();
-			//   	break;
+			case "Female":
+			  	testArray = femaleResults(allSexTypes);
+			  	break;
 		}
 
 		db.StdTest.findAll({
@@ -63,7 +63,7 @@ var testArray;
 	}); // end of API POST 
 
 	
-	//GET function in case we need it.
+	//GET function in case we need it.Nick, you can use this
 	app.get("/api/result", function(req, res) {
 		
 		db.StdTest.findAll({
@@ -124,28 +124,63 @@ var testArray;
 			}
 			//push all required tests to the arry and return to switch function
 		testArray.push(test1,test2,test3,test4);
-		console.log("line 166 :" + testArray);
-		console.log(typeof testArray);
 		return testArray;
 	};
 
+	//Function to determine tests needed for a male user
+	function femaleResults(allSexTypes){
+		var testArray= [];
+			//Urine test
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test1;
+				if (allSexTypes[i]==="Vaginal" || allSexTypes[i]=== "Receiving oral sex"){
+					test1 = "Urine Sample";
+				}
+			};
+			
+			//HIV Male
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test2;
+				if (allSexTypes[i] === "Anal" || allSexTypes[i] === "Vaginal" ){
+					test2 = "HIV Female";
+				}
+			}
+			//Throat Swab
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test3;
+				if (allSexTypes[i] === "Giving oral sex to a man"){
+					test3 = "Throat Swab";
+				}
+			}
+			//Rectal Swab
+			for (var i = 0; i<allSexTypes.length; i++){
+				var test4;
+				if (allSexTypes[i] === "Anal"){
+					test4 = "Rectal Swab";
+				}
+			}
+			//push all required tests to the arry and return to switch function
+		testArray.push(test1,test2,test3,test4);
+		console.log("line 166 :", testArray);
+		return testArray;
+	};
 	//function to create std model if needed
 	function createTestTable(){
 		var tests =  db.StdTest.bulkCreate ([{
 			test_name: "Throat Swab",
-			test_explanation: "Based on your answers, we recommend that you ask your provider for a throat swab. If you are having oral sex (putting a penis in your mouth) then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test."
+			test_explanation: "We recommend that you ask your provider for a throat swab. If you are having oral sex (putting a penis in your mouth,then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific”, which means that they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test."
 		},
 		{	test_name: "Rectal Swab",
-			test_explanation: "Based on your answers, we recommend that you ask your provider for a rectal swab. If you are having anal sex (putting a penis in your butt) then it’s important to look for gonorrhea and chlamydia in the rectum because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your butt, it will not show up on a urine test."
+			test_explanation: "We recommend that you ask your provider for a rectal swab. If you are having anal sex (putting a penis in your butt) then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific”, which means that they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test."
 		},
 		{	test_name: "Urine Sample",
-			test_explanation: "Based on your answers, we recommend that you ask your provider for a urine test to check for gonorrhea and chlamydia. Even if you are not having symptoms, it’s important to check for these STIs because the most common symptom is no symptom."
+			test_explanation: "We recommend that you ask your provider for a urine test to check for gonorrhea and chlamydia. Even if you are not having symptoms, it’s important to check for these STIs because the most common symptom is no symptom."
 		},
 		{	test_name: "HIV Male",
-			test_explanation: "Based on your answers, we recommend that you ask your provider for a rapid HIV test. Men who have sex with men have a higher risk for HIV. Even if you do not have symptoms, it’s a good idea to get checked at least twice a year. Rapid HIV tests can be as fast as 1 minute and are 99% accurate for any exposure that was over 3 months ago.If you are worried about a possible exposure that occurred in less than 72 hours (3 days) you should talk to your provider about PEP, a medication that prevents HIV if you were exposed. Think morning after pill but for HIV.If you have multiple partners or a partner who is living with HIV, we recommend that you talk to your provider about PrEP, a daily medication that prevents HIV. Think birth control but for HIV."
+			test_explanation: "We recommend that you ask your provider for a rapid HIV test. Men who have sex with men have a higher risk for HIV. Even if you do not have symptoms, it’s a good idea to get checked at least twice a year. Rapid HIV tests can be as fast as 1 minute and are 99% accurate for any exposure that was over 3 months ago.If you are worried about a possible exposure that occurred in less than 72 hours (3 days) you should talk to your provider about PEP, a medication that prevents HIV if you were exposed. Think morning after pill but for HIV.If you have multiple partners or a partner who is living with HIV, we recommend that you talk to your provider about PrEP, a daily medication that prevents HIV. Think birth control but for HIV."
 		},
 		{	test_name: "HIV Female",
-			test_explanation: "Based on your answers, we recommend that you ask your provider for a rapid HIV test. While risk for male/female sex and HIV is relatively small in the US, it is still a good idea to get checked at least once a year. If you have multiple partners, you may want to get tested twice a year. Rapid HIV tests can be as fast as 1 minute and are 99% accurate for any exposure that was over 3 months ago.If you are worried about a possible exposure that occurred in less than 72 hours (3 days) you should talk to your provider about PEP, a medication that prevents HIV if you were exposed. Think morning after pill but for HIV. If you have a partner who is living with HIV, we recommend that you talk to your provider about PrEP, a daily medication that prevents HIV. Think birth control but for HIV."
+			test_explanation: "We recommend that you ask your provider for a rapid HIV test. While risk for male/female sex and HIV is relatively small in the US, it is still a good idea to get checked at least once a year. If you have multiple partners, you may want to get tested twice a year. Rapid HIV tests can be as fast as 1 minute and are 99% accurate for any exposure that was over 3 months ago.If you are worried about a possible exposure that occurred in less than 72 hours (3 days) you should talk to your provider about PEP, a medication that prevents HIV if you were exposed. Think morning after pill but for HIV. If you have a partner who is living with HIV, we recommend that you talk to your provider about PrEP, a daily medication that prevents HIV. Think birth control but for HIV."
 		}]);
 	}
 };

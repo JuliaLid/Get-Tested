@@ -4,7 +4,8 @@ $(document).ready(function(){
     //if we add other pages with inputs, we'll need to set up another file 
 
     jQuery.noConflict();
-    //accordion control
+
+       //accordion control
     
     //survey.js fucntions
     // Survey.StylesManager.applyTheme("default");
@@ -93,25 +94,50 @@ $(document).ready(function(){
                 for (var j = 0; j<data.length; j++){
                     userTests.push(createTestDisplay(data[j]));
                 }
+                var header = $("<h4>").text("Based on your answers, we recommend the following tests:");
+                header.prependTo("#accordion");
 
                 $("#surveyResult").append(userTests);
-
-
               }); 
-               
         }
 
         function createTestDisplay(testData) {
-            var newTest = $("<div>");
-            // newTest.data("author", authorData);
-            newTest.append("<h5>" + testData.test_name + "</h5>");
-            newTest.append("<p>" + testData.test_explanation + "</p>");
-            newTest.append("</div>");
-            // newTr.append("<td> " + authorData.Posts.length + "</td>");
-            // newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-            // newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-            // newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
-            return newTest;
+            // var newTest = $("<div>");
+            
+            // newTest.append("<h5>" + testData.test_name + "</h5>");
+            // newTest.append("<p>" + testData.test_explanation + "</p>");
+            // newTest.append("</div>");
+           var id = testData.id;
+           var testName = testData.test_name;
+           var testDescription = testData.test_explanation;
+           
+           var accordionCard = $("<div>").addClass("card");
+           var accordionHeader = $("<div>").addClass("card-header");
+           var accordionLink = $("<a>").attr({
+            "class": "card-link",
+            "data-toggle": "collapse",
+            "href":"#collapse"+ id
+        });
+        accordionLink.text(testName);
+        accordionLink.appendTo(accordionHeader);
+        
+        
+        var accordionBody= $("<div>").attr({
+            "id": "collapse"+id,
+            "class": "collapse",
+            "data-parent": "#accordion"
+        });
+
+
+        var accordionBodyText = $("<div>").addClass("card-body");
+            accordionBodyText.text(testDescription);
+        accordionBodyText.appendTo(accordionBody);
+
+        accordionCard.append(accordionHeader).append(accordionBody);
+
+        
+
+            return accordionCard;
           }
         
 
