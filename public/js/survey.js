@@ -50,6 +50,17 @@ $(document).ready(function(){
                             "Anal sex with a woman",
                            
                         ]
+                    },{
+                        type: "radiogroup",
+                        name: "std_testing",
+                        title: "When was the last time you got tested for STDs?",
+                        isRequired: true,
+                        colCount: 1,
+                        choices: [
+                            "More than a year ago",
+                            "Less than a year ago",
+                            "I've never been tested"
+                    ]
                     }
                 ]
             };
