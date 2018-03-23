@@ -21,7 +21,7 @@ module.exports = function(app) {
   });
 
   // result route loads result.html
-  app.get("/result", function(req, res) {
+  app.get("/tests", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/result.html"));
   });
 
