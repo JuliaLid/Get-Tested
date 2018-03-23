@@ -7,28 +7,32 @@
     <link rel="stylesheet" href="css/reset.css" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     <!-- Link place holders -->
      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700" rel="stylesheet">
 
 
-    <title>Resources for Teens</title>
+    <title>Take the Survey</title>
 </head>
 <body class ="bgimg surveypic">
     <nav class="N/A transparent" role="navigation">
         <div class="nav-wrapper"><a id="logo-container" href="/" class="brand-logo"><img src="img/testedlogo.png" height="82"></a>
         </div>
         <ul class="nav justify-content-end">
+                <li>
+                    <a class="navlink" href="/tests">Tests Available</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/resources">Learn More</a>
                 </li>
             </ul>
     </nav>
         
-   <div id="survey" class="container">
+   <div id="survey" class="container surveycont">
        <div class="row">
-           <div id="surveyCard" class="col-lg-10 col-sm-12">
+           <div id="surveyCard" class="col-lg-8 col-sm-10">
                 <div id="surveyElement"></div>
                 <div id="surveyResult">
                     <div id="accordion">
@@ -50,19 +54,12 @@
             </div>
         </div>
     </div>
-    
-       
-     <footer class="footer">
-        <!-- <div class="container"> -->
-            <div class="copyright">
-                <h5>© 2018 TESTED</h5>
+         <footer class="survey-footer">
+            <div class="container text-center">
+                    <a class="right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="survey-git fa fa-github" style="font-size:36px;color:white"></i></a>
+                    <p class="footertext">© 2018 TESTED</p>  
             </div>
-            <div class="gitlink">
-                <h4><a class="right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github fa-lg"></i>Git Hub Repo</a></h4>
-            <!-- </div>   -->
-        </div>
-    </footer>
-
+        </footer>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   
                      
     <script src="https://surveyjs.azureedge.net/1.0.14/survey.jquery.js"></script>

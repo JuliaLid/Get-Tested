@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Misc -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
-    <title>TeSTeD</title>
+    <title>Tested</title>
 </head>
 
 <body class ="bgimg gradient">
@@ -24,14 +25,23 @@
             </a>
             <ul class="right hide-on-med-and-down link-choices">
                 <li>
-                    <a href="/survey">Take the Survey</a>
+                    <a class="navlink" href="/survey">Take the Survey</a>
                 </li>
                 <li>
-                    <a href="/resources">Learn More</a>
+                    <a class="navlink" href="/tests">Tests Available</a>
+                </li>
+                <li>
+                    <a class="navlink" href="/resources">Resources</a>
                 </li>
             </ul>
         </div>
-    </nav>
+
+                <div class="col s1">
+            <div class="fixed-action-btn" >
+                <a id="menu" class="btn btn-floating btn-large" onclick="$('.tap-target').tapTarget('open')" ><i class="material-icons">announcement</i></a>
+            </div>   
+    </div>
+        </nav>
     <main>
         <div class="section no-pad-bot" id="index-banner">
             <div class="container site-content">
@@ -39,27 +49,22 @@
                   <div class="row center">
                     <h4 class="header col s8 offset-s2 white-text intro-text"><span class="flow-text">If you are having sex, it’s important to get tested at least once a year. Take our short quiz to find out what tests you should ask your provider for based on what kind of sex you’re having. It’s important to be informed so you can make the best decisions for your sexual health.</span></h4>
                   </div>
-                  <div class="row center">
-                    <a href="/survey" id="download-button" class="col s4 offset-s4 btn-large waves-effect waves">Take the Survey</a>
+                  <div class="center-align">
+                    <a href="/survey" id="download-button" class="col s4 btn-large waves-effect waves">Take the Survey</a>
                   </div>
             </div>
         </div>
 
     </main>
     <footer class="page-footer">
-        <div class="row">
-            <div class="col s6 footerleft">
-                <h5 class="white-text">© 2018 TESTED</h5>
+        <div class="center-align">
+            <div class="col s6 footerleft">   
+                <a class= "giticon" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github" style="font-size:36px;color:white"></i></a>
+                    <p class="surveytext">© 2018 TESTED</p>                
+                </div>
             </div>
-            <div class="col s5">
-                <h5><a class="white-text right" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github fa-lg"></i>Git Hub Repo</a></h5>
-            </div>
-            <div class="fixed-action-btn" >
-                <a id="menu" class="btn btn-floating btn-large" onclick="$('.tap-target').tapTarget('open')" ><i class="material-icons">announcement</i></a>
-            </div>   
-        </div>
         <div class="tap-target-wrapper">   
-            <div class="tap-target cyan" data-activates="menu">
+            <div class="right tap-target cyan" data-activates="menu">
                 <div id="disclaimer" class="tap-target-content white-text">
                     <h5>Disclaimer</h5>
                     <p class="white-text">Many testing and vaccination options are available but can differ based upon your age, gender, and sexual orientation. That's why we ask those questions. You should always consult with your healthcare provider with any questions or concerns about your health and these tests.</p>
