@@ -35,7 +35,7 @@
     *  HTML5
     * CSS3
     * [Materialize](http://materializecss.com/) - front-end library
-    * [Font Awesome](http://www.nightmarejs.org/)
+    * [Font Awesome](https://fontawesome.com)
     * [Google Maps API](https://developers.google.com/maps/)
     * [Survey.js](https://surveyjs.io/Overview/Library/)
     * JavaScript
