@@ -18,6 +18,7 @@ var db = require("./models");
 // =============================================================
 require("./routes/html-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
+require("./routes/test-api-routes.js")(app);
 
 // Syncing the sequelize models and starting our Express app
 // =============================================================

@@ -12,8 +12,21 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+//GET route for all tests
+  app.get("/api/tests", function(req, res) {
+    
+    db.StdTest.findAll({
+      
+    })
+    .then(function(result) {
+    
+      console.log(result);
+      res.json(result);
+      });
+    });
+
   
-  app.get("/api/survey", function(req, res) {
+  /*app.get("/api/survey", function(req, res) {
 
    //Include switch functions here
 //THis is not being called. Table is created 
@@ -42,65 +55,10 @@ module.exports = function(app) {
     });
 
   });
-
-  
-
-  app.post("/api/tests", function(req, res) {
-
-   console.log(req.body);
-    db.StdTest.create({
-      test_name: req.body.test_name,
-      multiple_partners: req.body.multiple_partners,
-      sex_act: req.body.sex_act,
-      symptoms: req.body.symptoms,
-      Gonorrhea: req.body.Gonorrhea,
-      Chlamydia: req.body.Chlamydia,
-      HIV: req.body.HIV
-      
-    })
-    .then(function(result) {
-      res.json(result);
-    });
-    
-  });
-
+*/
   
 };
 
-//values: ['ThroatSwab', 'RectalSwab', 'UrineSample', 'FingerStick']
 
-var resultsMale = function() {
-  if (sexType1 === "Vaginal") {
-      return UrineSample
-  }
-  else if (sexType2 === "Giving oral sex to a man") {
-      return UrineSample, HIVMale
-  }
-  else if (sexType3 === "Anal sex with a man (bottom)") {
-      return HIVMale, RectalSwab
-  }
-  else if (sexType4 === "Receiving oral sex") {
-    return UrineSample, HIVMale
-  }
-  else if (sexType5 === "Anal sex with a man (top)'"){
-    return HIVMale, RectalSwab
-  }
-  else if (sexType6 === "Anal sex with a woman'"){
-    return UrineSample
-  }
-}
-var resultsFemale = function(){
-  if (sex_act === "Vaginal"){
-    return UrineSample, FingerStick
-  }
-  else if (sex_act === "Giving oral sex to a man"){
-    return ThroatSwab
-  }
-  else if (sex_act === "Anal"){
-    return RectalSwab, FingerStick
-  }
-  else if(sex_act === "Receiving oral sex"){
-    return UrineSample
-  }
-}
+
 
