@@ -13,19 +13,20 @@ main {
     color: #ffffff;
     text-shadow: 2px 2px 4px #000000;
   }
-  h5 {
-    padding-left: 10px;
-    font-size: 1rem;
-  }
   h4 {
     color: white;
     text-shadow: 1px 1px 3px #000000;
   }
+  h5 {
+  font-size: 1.5rem;
+  padding-left: 0;
+  padding-bottom: 10px;
+}
   h6{
     font-size: 24px;
     color: #673ab7;
   }
-  .footertext{
+ .footertext{
   color: white;
   }
 .googlemap{
@@ -41,6 +42,10 @@ nav .brand-logo {
     display: inline-block;
     padding-left: 1rem;
 }
+.survey-right{
+  float: right;
+  margin-right: 10px;
+}
 
 nav {
   box-shadow: none;
@@ -48,8 +53,11 @@ nav {
 .navlink {
   font-size: 1.2rem;
   text-shadow: 2px 2px 4px #000000;
+  color: white;
 }
-
+.navsur{
+  padding: 20px 10px;
+}
 .brand-logo {
     position: absolute;
     color: #fff;
@@ -63,46 +71,29 @@ nav {
 }
 /* End nav bar */
 
-/* IS IT USED BY ANY PAGES??? */
-/* #container {
-  width: 900px;
-  margin: 30px auto;
-  display: grid;
-  grid-template-columns: [col-1] 2fr [col-2] 2fr ;
-  grid-template-rows: [row-1] 300px [row-2] 1fr [row-3] 2fr [row-4 ];
-  grid-gap: 10px;
-  background-color: white;
-
-} */
 
 /* Page background image styling */
-  .bgimg { 
-    background-image: url("../img/backgroundcolor.png");
+.bgimg { 
     height: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .waves-effect {
       transition: none;
 }
-
-/*.gradient{ 
-  background: linear-gradient(135deg, rgba(255,0, 255, .25),#0000ff 50%, #ff00ff 100%); ;
-  opacity: .66;
-  }*/
-
 .indexpic{
-    background-image: url("../img/backgroundcolor.png");
+    background-image: url("../img/backgroundindex.png");
  }
  .resourcespic {
-   background-image: url("../img/backresources.png");
+   background-image: url("../img/backgroundresources.png");
  }
  .surveypic {
-   background-image: url("../img/Resourcesupdated.png");
+   background-image: url("../img/surveyback.png");
  }
- .resultpic {
-   background-image: url("../img/bluebackground.png");  
+ .testspic {
+   background-image: url("../img/backgroundtest.png");  
  }
 
 /* END Page background image styling */
@@ -120,28 +111,10 @@ nav {
   background-color: #0d47a1;
  }
 
-/*.btn{
-  background-color: aqua
-}
-.btn:visited{
-  background-color: yellow
-}
-.btn:hover {
-  background-color: skyblue
-}
-.btn:active{
-  background-color: pink;
-}*/
- /*Main page disclaimer  */
 #disclaimer {
   width: 500px !important;
 }
 
-h5 {
-  font-size: 1.5rem;
-  padding-left: 0;
-  padding-bottom: 10px;
-}
 /* End main page disclaimer */
 
 /* Results page  */
@@ -149,20 +122,28 @@ h5 {
   color: #0d47a1;
   font-size: 16px;
 }
-.collapsible-header{
+.collapsible-header, .card-header{
   color: #673ab7;
   font-size: 1.5rem;
   border-style: outset;
   border-width: 3px;
+  background-color: white;
 /*  background: linear-gradient(-45deg, #673ab7, #ffffff, #ffffff);*/
 }
-.blueresults{
+.blueresults, .card-link{
   color: #0d47a1;
+}
+#surveyResult h4{
+  color: #0d47a1;
+  font-size: 36px;
+  text-align: center;
+  text-shadow: none;
+  padding-bottom: 30px;
 }
 .collapsible-body{
   background-color: #ede7f6;
 }
-.lightresults {
+.lightresults, .card-body {
   background-color: #e3f2fd;
 }
 .white-text-left{
@@ -230,9 +211,9 @@ h5 {
 
 #survey {
   margin: 5rem auto;
-}
+  }
 #surveyCard {
-  width: 60%;
+  width: 80%;
   margin:0 auto;
   background-color:white;
   font-family: 'Roboto', sans-serif;
@@ -262,8 +243,7 @@ h5 {
 
 }
 .surveycont {
-  width: auto;
-  max-width: 680px;
+  max-width: 1200px;
   padding: 0 15px;
 }
 /* Survey button */
@@ -274,16 +254,22 @@ h5 {
   cursor: pointer;
   margin-top: 0;
 }
+label{
+  padding-bottom: 20px;
+}
+.sv_bootstrap_css .sv_qstn{
+  padding-bottom: 0 !important;
+}
 /* Survey page footer sytling */
 .survey-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: #04447d;
+  background-color: #546e7a;
 }
 .page-footer {
-  background-color: #04447d;
+  background-color: #546e7a;
   padding: 0 2rem 0 2rem;
 }
 .survey-git{
@@ -293,8 +279,14 @@ h5 {
   padding-right: 0px;
   padding-left: 15px;
 }*/
+.survey-right{
+  margin-right: 30px;
+}
 .nav-item {
   transition: background-color .3s;
+  padding: 20px 10px;
+  margin: 0;
+  background-color: .3s;
 }
 .nav-link {
   font-size:1.2rem;
@@ -305,17 +297,17 @@ h5 {
   cursor: pointer;
   text-shadow: 2px 2px 4px #000000;
 }
+li.nav-item a:hover {
+  background-color: rgba(0,0,0,0.1);
+  color: white;
+  text-decoration: none;
+}
 /* Survey submission text */
 .card-block h3 {
-  text-align: center;
-  color: #fff;
+visibility: hidden;
   /* I had to use this color to make survey.js text invisible */
 }
 
 #accordion card:last-of-type  {
   margin-bottom: 50px;
-}
-
-#surveyResult h4 {
-  color: #673ab7;
 }
