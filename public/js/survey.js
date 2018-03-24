@@ -3,7 +3,7 @@ $(document).ready(function(){
     
 
     jQuery.noConflict();
-
+    /*
     var data = {
         // A labels array that can contain any sort of values
         labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
@@ -40,7 +40,7 @@ $(document).ready(function(){
       ];
       
       new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
-      
+      */
 
     Survey.Survey.cssType = "bootstrap";
     
