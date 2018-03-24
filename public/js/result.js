@@ -1,3 +1,5 @@
+
+
 var clinics =[
  ["Red Door Services", 44.974529, -93.262505, "525 Portland Ave Street", "Minneapolis, MN","612-543-5555"],
  ["Hennepin County Medical Center Positive Care", 44.970922,-93.25964, "915 S 7th Street", "Minneapolis, MN","612-873-9988"],
@@ -61,3 +63,71 @@ function pinSymbol(color) {
         scale: 1,
    };
 }
+
+
+$(document).ready(function(){
+//Callback
+ getAllTests();
+
+ function getAllTests() {
+            console.log("I'm a triggered on redirect");
+            $.get("/api/tests", function(result) {
+
+              var tests = [];
+                for (var j = 0; j<result.length; j++){
+                    tests.push(showTests(result[j]));
+                    //for testing loop
+                    console.log(result[j]);
+                }
+                var header = $("<h4>").text("Available tests include:");
+                header.prependTo(".collapsible");
+
+                $("#results").append(tests);
+             
+                console.log("line 69 :",result); //this came from user-api line 102
+            });
+            
+         };
+
+        function showTests(result) {
+            // var newTest = $("<div>");
+            
+            // newTest.append("<h5>" + testData.test_name + "</h5>");
+            // newTest.append("<p>" + testData.test_explanation + "</p>");
+            // newTest.append("</div>");
+           var id = result.id;
+           var testName = result.test_name;
+           var testDescription = result.test_explanation;
+           
+           var accordionCard = $("<div>").addClass("collapsible-header blueresults");
+           var accordionHeader = $("<i>").addClass("material-icons");
+           var accordionBody = $("<div>").addClass("collapsible-body lightresults");
+           /*var accordionLink = $("<a>").attr({
+            "class": "card-link",
+            "data-toggle": "collapse",
+            "href":"#collapse"+ id
+        });*/
+        accordionHeader.text(testName);
+        accordionBody.appendTo(accordionHeader);
+        
+        
+        /*var accordionBody2= $("<div>").attr({
+            "id": "collapse"+id,
+            "class": "collapse",
+            "data-parent": "#accordion"
+        });*/
+
+
+        var accordionBodyText = $("<div>").addClass("collapsible-body lightresults");
+            accordionBodyText.text(testDescription);
+        accordionBodyText.appendTo(accordionBody);
+
+        accordionCard.append(accordionHeader).append(accordionBody);
+
+        
+
+            return accordionCard;
+          }
+
+ 
+});
