@@ -319,3 +319,14 @@ h5 {
 #surveyResult h4 {
   color: #673ab7;
 }
+
+.ct-series-a .ct-bar {
+  /* Colour of your bars */
+  stroke: red;
+  /* The width of your bars */
+  stroke-width: 20px;
+  /* Yes! Dashed bars! */
+  stroke-dasharray: 20px;
+  /* Maybe you like round corners on your bars? */
+  stroke-linecap: round;
+}
