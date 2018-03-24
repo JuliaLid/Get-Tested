@@ -1,43 +1,39 @@
 var expect = require("chai").expect;
-var resultsMale = require("../routes/test-api-routes");
-var resultsFemale = require("../routes/test-api-routes");
+var resultsMale = require("../routes/test-api-routes-male");
+var resultsFemale = require("../routes/test-api-routes-female");
 
-describe("api routes", function() {
+describe("Vaginal sex", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsMale("Vaginal")).to.equal("UrineSample");
     })
 });
 
-describe("api routes", function() {
+describe("Anal sex male/female", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
-        expect(resultsMale("Anal sex with a woman")).to.equal("Urine Sample, FingerStick");
+        expect(resultsMale("Anal sex with a woman")).to.equal("UrineSample, FingerStick");
     })
 });
 
-//putting & does not work, taking out comma does not work, saying just FingerStick does not work
-//Having same issue with any result that has two tests coming back from the array ... not sure what to do will ask TAs
-
-
-describe("api routes", function() {
+describe("Oral sex to male", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsMale("Giving oral sex to a man")).to.equal("ThroatSwab");
     })
 });
 
-describe("api routes", function() {
+describe("Topping", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsMale("Anal sex with man (top)")).to.equal("FingerStick, UrineSample");
     })
 });
 
 
-describe("api routes", function() {
+describe("Bottoming", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
-        expect(resultsMale("Anal sex with man (bottom)")).to.equal("RectalSwab");
+        expect(resultsMale("Anal sex with man (bottom)")).to.equal("FingerStick, RectalSwab");
     })
 });
 
-describe("api routes", function() {
+describe("Receive oral sex", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsMale("Receiving oral sex")).to.equal("UrineSample");
     })
@@ -46,32 +42,30 @@ describe("api routes", function() {
 //----------------------------------------------------------------------------------------
 //Tests for resultsFemale 
 
-describe("api routes", function() {
+describe("Vaginal sex Female", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsFemale("Vaginal")).to.equal("UrineSample, FingerStick");
     })
 });
 
-describe("api routes", function() {
+describe("Oral sex give", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsFemale("Giving oral sex to a man")).to.equal("ThroatSwab");
     })
 });
 
-describe("api routes", function() {
+describe("Anal sex female/male", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
-        expect(resultsFemale("Anal")).to.equal("Rectabl Swab, FingerStick");
+        expect(resultsFemale("Anal")).to.equal("RectalSwab, FingerStick");
     })
 });
 
-describe("api routes", function() {
+describe("receive oral sex", function() {
     it("takes a sex act and returns appropriate test priorities", function() {
         expect(resultsFemale("Receiving oral sex")).to.equal("UrineSample");
     })
 });
 
 
-//bring up to the team --- we need to have 2 Male HIV results - 1 for Male/Female and another for Male/Male
 
-// Also we never really considered if someone has sex w both male and female ... maybe we can figure that out if there's time
 

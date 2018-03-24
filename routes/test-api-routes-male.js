@@ -74,36 +74,21 @@ var resultsMale = function(sex_act) {
       return testType[2];
   }
   else if (sex_act === "Anal sex with a woman") {
-      return testType[2,3]
+      return "UrineSample, FingerStick"
   }
   else if (sex_act === "Giving oral sex to a man") {
       return testType[0]
   }
   else if (sex_act === "Anal sex with man (top)") {
-    return testType[3,2]
+    return "FingerStick, UrineSample"
   }
   else if (sex_act === "Anal sex with man (bottom)"){
-    return testType[3,1]
+    return "FingerStick, RectalSwab"
   }
   else if (sex_act === "Receiving oral sex"){
     return testType[2]
   }
 };
 
-var resultsFemale = function(){
-  if (sex_act === "Vaginal"){
-    return UrineSample, FingerStick
-  }
-  else if (sex_act === "Giving oral sex to a man"){
-    return ThroatSwab
-  }
-  else if (sex_act === "Anal"){
-    return RectalSwab, FingerStick
-  }
-  else if(sex_act === "Receiving oral sex"){
-    return UrineSample
-  }
-};
-
-module.exports = resultsMale, resultsFemale;
+module.exports = resultsMale;
 
