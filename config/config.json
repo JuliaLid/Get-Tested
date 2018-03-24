@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "BootCamp18",
+    "password": null,
     "database": "STDTEST_db",
     "host": "localhost",
     "dialect": "mysql"
