@@ -32,15 +32,5 @@ module.exports = function(sequelize, DataTypes) {
     	
     });
 
-  //   User.associate = function(models) {
-    
-  //   User.belongsTo(models.StdTest, {
-  //     foreignKey: {
-  //       allowNull: false
-  //     }
-  //   });
-  // };
-
-
-    return User;
+      return User;
   };

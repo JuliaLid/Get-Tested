@@ -67,11 +67,10 @@ var clinics =[
    }
  $(document).ready(function(){
  getAllTests();
-
+// location.reload();
  function getAllTests() {
             console.log("I'm a triggered on redirect");
             $.get("/api/tests", function(result) {
-
               var tests = [];
                 for (var j = 0; j<result.length; j++){
                     tests.push(showTests(result[j]));
@@ -84,8 +83,9 @@ var clinics =[
                 $(".collapsible").append(tests);
              
                 console.log("line 69 :",result); //this came from user-api line 102
+                // location.reload();
             });
-            
+      
          };
 
         function showTests(result) {
