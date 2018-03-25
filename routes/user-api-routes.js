@@ -63,20 +63,7 @@ var testArray;
 	}); // end of API POST 
 
 	
-	//GET function in case we need it.Nick, you can use this
-	app.get("/api/result", function(req, res) {
-		
-		db.StdTest.findAll({
-			where:{
-				test_name: "Throat Swab"
-			}
-		})
-		.then(function(result) {
-			// console.log(result[0].dataValues);
-			// return res.json(result[0].dataValues);//apply thi to post
-		});
-	  });
-		
+	
  
  //=============Helper Functions===================
  //function to check if the table with tests has been created
