@@ -1,11 +1,8 @@
-
+$(document).ready(function(){
     //add all AJAX calls to capture user's survey info
     jQuery.noConflict();
 
-
-    
-
-    jQuery.noConflict();
+  
     /*
     var data = {
         // A labels array that can contain any sort of values
