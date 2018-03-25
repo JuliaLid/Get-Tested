@@ -177,7 +177,7 @@ $(document).ready(function(){
        //Functions to display results
        //This function is called after the survey post.
     function getTestResults() {
-        $.get("/api/result", function(result) {
+        $.get("/api/survey", function(result) {
         
             console.log("line 111 :",result); 
         });
