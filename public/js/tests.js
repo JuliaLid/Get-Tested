@@ -45,13 +45,13 @@ var clinics =[
              map: map, 
              title: name,
              position: latlngset,
-             icon:pinSymbol("#26d2fd")  
+             icon:pinSymbol("#1e88e5")  
        });
        
        map.setCenter(marker.getPosition());
        
        
-       var content = '<div id="info">'+"<h5>" +name +"</h5>" + "<p>" + add1 + "</p>" + "<p>" + add2 + "</p>"+ "<p>" + "<br>"+ phone + "</p>"+ "</div>";     
+       var content = '<div id="info">'+"<h6>" +name +"</h6>" + "<p>" + add1 + "</p>" + "<p>" + add2 + "</p>"+ "<p>" + "<br>"+ phone + "</p>"+ "</div>";     
    
        var infowindow = new google.maps.InfoWindow()
    
