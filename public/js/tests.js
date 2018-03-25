@@ -1,11 +1,20 @@
 
-
-//Callback
-
 var clinics =[
     ["Red Door Services", 44.974529, -93.262505, "525 Portland Ave Street", "Minneapolis, MN","612-543-5555"],
-    ["Hennepin County Medical Center Positive Care", 44.970922,-93.25964, "915 S 7th Street", "Minneapolis, MN","612-873-9988"],
-    ["Youth Link Health and Wellness Clinic",44.976367, -93.28202,"41 N 12th Street", "Minneapolis, MN", "612-252-1200"]
+    ["HCMC Positive Care", 44.970922,-93.25964, "915 S 7th Street", "Minneapolis, MN","612-873-9988"],
+    ["Youth Link Health and Wellness Clinic",44.976367, -93.28202,"41 N 12th Street", "Minneapolis, MN", "612-252-1200"],
+    ["HCMC Brooklyn Center Clinic", 45.07547812, -93.30650393, "6601 Shingle Creek Parkway, Suite 400", "Brooklyn Center, MN", "612-873-6963"],
+    ["HCMC Richfield Clinic", 44.88381724, -93.2880008, "790 West 66th Street, Market Plaza", "Richfield, MN", "612-873-6963"],
+    ["HCMC East Lake Clinic", 44.94870414, -93.2327232, "2700 East Lake Street, Suite 1100", "Minneapolis, MN", "612-873-6963"],
+    ["HCMC Downtown", 44.97328199, -93.26169987, "716 South 7th Street", "Minneapolis, MN", "612-873-6963"],
+    ["HCMC Brooklyn Park Clinic", 45.09345831, -93.35579755, "7650 Zane Ave N", "Brooklyn Park, MN", "612-873-6963"],
+    ["HCMC Whittier Clinic", 44.95179163, -93.27798838, "2810 Nicollet Ave", "Minneapolis, MN", "612-873-6963"],
+    ["HCMC", 44.97210377, -93.26241063, "701 Park Ave", "Minneapolis, MN", "612-873-3000"],
+    ["HCMC St. Anthony Village Clinic", 45.01598378, -93.22011031, "2714 Highway 88", "St. Anthony, MN", "612-873-6963"],
+    ["HCMC Coordinated Care Center", 44.97075454, -93.2597699, "900 South 8th Street", "Minneapolis, MN", "612-873-6963"],
+    ["Parkside Specialty Services Clinic", 44.97057794, -93.26124282, "825 South 8th Street", "Minneapolis, MN", "612-347-6450"],
+    ["HCMC Golden Valley Clinic", 44.99755535, -93.35096242, "5653 Duluth Street", "Golden Valley, MN", "612-873-6963"],
+    ["North Loop Clinic", 44.98934289, -93.27869508, "800 Washington Ave. N.", "Minneapolis, MN", "612-873-6963"]
    ];
    
    function initMap() {
@@ -77,9 +86,7 @@ var clinics =[
                     //for testing loop
                     console.log(result[j]);
                 }
-                var header = $("<h4>").text("Available tests include:");
-                header.prependTo(".collapsible");
-
+                
                 $(".collapsible").append(tests);
              
                 console.log("line 69 :",result); //this came from user-api line 102
@@ -114,29 +121,6 @@ var clinics =[
             var fullBody = accordionBody.append(newSpan);
 
             cardContainer.append(cardHeader).append(fullBody);
-           /*var accordionLink = $("<a>").attr({
-            "class": "card-link",
-            "data-toggle": "collapse",
-            "href":"#collapse"+ id
-        });*/
-        // accordionHeader.text(testName);
-        // accordionBody.appendTo(accordionHeader);
-        
-        
-        /*var accordionBody2= $("<div>").attr({
-            "id": "collapse"+id,
-            "class": "collapse",
-            "data-parent": "#accordion"
-        });*/
-
-
-        // var accordionBodyText = $("<div>").addClass("collapsible-body lightresults");
-        //     accordionBodyText.text(testDescription);
-        // accordionBodyText.appendTo(accordionBody);
-
-        // accordionCard.append(accordionHeader).append(accordionBody);
-
-        
 
             return cardContainer;
           }
