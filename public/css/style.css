@@ -1,330 +1,270 @@
 /* Main styling */
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    font-family: 'Roboto', sans-serif;
-  }
-
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+}
 main {
-    flex: 1 0 auto;
-  }
-  h3 {
-    color: #ffffff;
-    text-shadow: 2px 2px 4px #000000;
-  }
-  h4 {
-    color: white;
-    text-shadow: 1px 1px 3px #000000;
-  }
-  h5 {
+  flex: 1 0 auto;
+}
+h2{
   font-size: 1.5rem;
-  padding-left: 0;
-  padding-bottom: 10px;
+  color: #673ab7;
+  margin: 10px 0 10px;
 }
-  h6{
-    font-size: 24px;
-    color: #673ab7;
-  }
- .footertext{
-  color: white;
-  }
-.googlemap{
-    text-align: center;
-  /*  text-shadow: 1px 1px 3px #000000;*/
-    color: #0d47a1;
-  }         
-/* End main styling */
-  /* Nav Logo */
-nav .brand-logo {
-    position: absolute;
-    color: #fff;
-    display: inline-block;
-    padding-left: 1rem;
-}
-.survey-right{
-  float: right;
-  margin-right: 10px;
-}
-
-nav {
-  box-shadow: none;
-}
-.navlink {
-  font-size: 1.2rem;
+h3 {
+  color: #ffffff;
   text-shadow: 2px 2px 4px #000000;
-  color: white;
 }
-.navsur{
-  padding: 20px 10px;
+h4 {
+  color: white;
+  text-shadow: 1px 1px 3px #000000;
+}
+h5 {
+padding-left: 0;
+padding-top: 10px;
+font-size: 24px;
+}
+h6{
+  font-size: 18px;
+  color: #01579b;
+}      
+/* End main styling */
+/* Nav Logo */
+nav {
+box-shadow: none;
 }
 .brand-logo {
-    position: absolute;
-    color: #fff;
-    display: inline-block;
-    font-size: 2.1rem;
-    margin-left: 30px;
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  margin-left: 30px;
+  padding: 0;
+}
+.navlink {
+font-size: 1.2rem;
+text-shadow: 2px 2px 4px #000000;
+color: white;
+}
+.navsur{
+padding: 20px 10px;
+font-size: 18px;
+}
+.link-choices{
+margin-right: 30px;
+}
+.nav-item {
+transition: background-color .3s;
+padding: 15px 10px;
+margin: 0;
+background-color: .3s;
+}
+li.nav-item a:hover {
+background-color: rgba(0,0,0,0.1);
+color: white;
+text-decoration: none;
+padding-left: 20px;
+padding-right: 20px;
+}
+.survey-right{
+margin-right: 30px;
+float: right;
 }
 
-.link-choices{
-  margin-right: 30px;
-}
 /* End nav bar */
 
 
 /* Page background image styling */
 .bgimg { 
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 .waves-effect {
-      transition: none;
+    transition: none;
 }
 .indexpic{
-    background-image: url("../img/backgroundindex.png");
- }
- .resourcespic {
-   background-image: url("../img/backgroundresources.png");
- }
- .surveypic {
-   background-image: url("../img/surveyback.png");
- }
- .testspic {
-   background-image: url("../img/backgroundtest.png");  
- }
+  background-image: url("../img/backgroundindex.png");
+}
+.resourcespic {
+ background-image: url("../img/backgroundresources.png");
+}
+.surveypic {
+ background-image: url("../img/backgroundsurvey.png");
+}
+.testspic {
+ background-image: url("../img/backgroundtest.png");  
+}
 
 /* END Page background image styling */
 
-.btn-large {
-  background-color: #ff00ff;
-  color: white;
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 4px #000000;
- }
-.btn-large:hover {
-  background-color:  #01579b;
-}
- .btn-large:focus {
-  background-color: #0d47a1;
- }
+/*button on index page and survey page*/
 
+
+.btn-large, .sv_complete_btn {
+background-color: #ff00ff;
+color: white;
+font-size: 1.8rem;
+text-shadow: 2px 2px 4px #000000;
+text-transform: uppercase;
+}
+.sv_complete_btn {
+background-color: #0d47a1;
+color: white;
+padding: 5px 30px;
+cursor: pointer;
+margin-top: 0;
+font-size: 20px;
+}
+.btn-large:hover, .sv_complete_btn:hover {
+background-color:  #01579b;
+}
+.btn-large:focus, .sv_complete_btn:focus {
+background-color: #0d47a1;
+}
+/* End button */
+
+/* main page disclaimer */
 #disclaimer {
-  width: 500px !important;
+width: 500px !important;
 }
-
 /* End main page disclaimer */
 
-/* Results page  */
+/* tests page, resource page & survey results  */
 .cliniclocations, .cardtitle {
-  color: #0d47a1;
-  font-size: 16px;
+color: #0d47a1;
+font-size: 16px;
 }
 .collapsible-header, .card-header{
-  color: #673ab7;
-  font-size: 1.5rem;
-  border-style: outset;
-  border-width: 3px;
-  background-color: white;
-/*  background: linear-gradient(-45deg, #673ab7, #ffffff, #ffffff);*/
+color: #673ab7;
+font-size: 1.5rem;
+border-style: outset;
+border-width: 3px;
+background-color: white;
 }
-.blueresults, .card-link{
-  color: #0d47a1;
+.card-header{
+background-color:#0d47a1;
+color: white;
+}
+.blueresults{
+color: #0d47a1;
+}
+.card-link{
+color: white;
+}
+.card-link:hover{
+color: #e3f2fd;
 }
 #surveyResult h4{
-  color: #0d47a1;
-  font-size: 36px;
-  text-align: center;
-  text-shadow: none;
-  padding-bottom: 30px;
+color: #0d47a1;
+font-size: 26px;
+text-align: center;
+text-shadow: none;
+padding-bottom: 30px;
 }
 .collapsible-body{
-  background-color: #ede7f6;
+background-color: #ede7f6;
 }
 .lightresults, .card-body {
-  background-color: #e3f2fd;
-}
-.white-text-left{
-  padding-top: 4rem;
-}
-#menu {
-  background-color: #ff00ff;
-}
-.copyright{
-  float: left;
-}
-.gitlink{
-  float: right;
-  margin-right: 15px;
-}
-.giticon {
-  margin-bottom: 10px;
-}
-.footerright{
-  margin-top: 15px;
-}
-.footerrightmain{
-  margin-top: 15px;
-  padding-right: 6rem;
-}
-.page-footer{
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.white-text-right{
-  padding: 0;
-  margin: 0;
-}
-.fa {
-  margin-bottom: 5px;
+background-color: #e3f2fd;
 }
 
-/* Google Map on Results page */
+
+/* Google Map on tests page */
 
 #map-container, #results {
-  margin-top: 5rem;
+margin-top: 5rem;
 }
 #background-map {
-  margin-top: 10px;
-  background-color: #e3f2fd;
-  padding: 0px 20px 20px 20px;
-  border-style: outset;
-  border-width: 3px;
+margin-top: 10px;
+background-color: #e3f2fd;
+padding: 0px 20px 20px 20px;
+border-style: outset;
+border-width: 3px;
 }
-
-
 #map {
-  height: 400px;
-  width: 100%;
-  border: #0d47a1 4px solid;
+height: 400px;
+width: 100%;
+border: #0d47a1 1px solid;
 }
-
-#map h5 {
-  color:#0d47a1;
-  font-weight: bold;
-}
+.googlemap{
+  text-align: center;
+  color: #0d47a1;
+  text-shadow: none;
+}   
 /* End Results Page */
 
 /* Survey page */
 
 #survey {
-  margin: 5rem auto;
-  }
+margin: 5rem auto;
+}
 #surveyCard {
-  width: 80%;
-  margin:0 auto;
-  background-color:white;
-  font-family: 'Roboto', sans-serif;
-  padding: 20px;
-  border-style: outset;
-  border-width: 3px;
+width: 80%;
+margin:0 auto;
+background-color:white;
+font-family: 'Roboto', sans-serif;
+padding: 20px;
+border-style: outset;
+border-width: 3px;
 }
-#sp_100{
-  font-size: 1.5rem;
-}
-.sv_qstn {
-  padding-bottom: 10px;
-  }
-.panel-footer card-footer{
-  padding: 0;
-}
-/* Drop-down windows */
-/* #sq_102i, #sq_106i {
-  width: 50%;
-} */
+
 /* Overriding Bootstrap styling of the survey */
 .card-footer {
-  margin: 0;
-  padding: 0 1.25rem .75rem 1.25rem;
-  background-color: white !important;
-  border-top: white !important;
-
+margin: 0;
+padding: 1.5rem 1.25rem .75rem 1.25rem;
+background-color: white !important;
+border-top: white !important;
 }
 .surveycont {
-  max-width: 1200px;
-  padding: 0 15px;
+max-width: 1200px;
+padding: 0 15px;
 }
-/* Survey button */
-.sv_complete_btn {
-  background-color: #0d47a1;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 0;
-}
+
 label{
-  padding-bottom: 20px;
+padding-bottom: 10px;
+padding-left: 15px;
+font-size: 20px;
 }
 .sv_bootstrap_css .sv_qstn{
-  padding-bottom: 0 !important;
+padding-bottom: 0 !important;
 }
-/* Survey page footer sytling */
-.survey-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: #546e7a;
-}
-.page-footer {
-  background-color: #546e7a;
-  padding: 0 2rem 0 2rem;
-}
-.survey-git{
-  margin-bottom: 0;
-}
-/*.footer > .container {
-  padding-right: 0px;
-  padding-left: 15px;
-}*/
-.survey-right{
-  margin-right: 30px;
-}
-.nav-item {
-  transition: background-color .3s;
-  padding: 20px 10px;
-  margin: 0;
-  background-color: .3s;
-}
-.nav-link {
-  font-size:1.2rem;
-  color: #fff;
-  display: block;
-  padding: 20px;
-  margin-right: 30px;
-  cursor: pointer;
-  text-shadow: 2px 2px 4px #000000;
-}
-li.nav-item a:hover {
-  background-color: rgba(0,0,0,0.1);
-  color: white;
-  text-decoration: none;
-}
+
 /* Survey submission text */
 .card-block h3 {
 visibility: hidden;
-  /* I had to use this color to make survey.js text invisible */
+height: 0;
+/* I had to use this color to make survey.js text invisible */
 }
 
 #accordion card:last-of-type  {
-  margin-bottom: 50px;
+margin-bottom: 50px;
 }
 
 
-#surveyResult h4 {
-  color: #673ab7;
+/*footer*/
+.giticon {
+margin-bottom: 10px;
 }
-
-.ct-series-a .ct-bar {
-  /* Colour of your bars */
-  stroke: red;
-  /* The width of your bars */
-  stroke-width: 20px;
-  /* Yes! Dashed bars! */
-  stroke-dasharray: 20px;
-  /* Maybe you like round corners on your bars? */
-  stroke-linecap: round;
+.footertext{
+color: white;
+}
+.page-footer{
+background-color: #546e7a;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+/*survey footer*/
+.survey-git{
+margin-bottom: 0;
+}
+.survey-footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 60px;
+background-color: #546e7a;
 }
 
