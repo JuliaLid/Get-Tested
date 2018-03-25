@@ -32,15 +32,4 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/resources.html"));
   });
 
-
-  ///Additional Routes - ONLY to be used after MVP is completed  
-  //==================================================
-  // clinic route loads clinic.html
-  app.get("/clinic", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/clinic.html"));
-  });
-
-
- 
-
 };
