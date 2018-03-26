@@ -78,6 +78,7 @@ var clinics =[
  
    $(document).ready(function(){
 	//Function to display all available test via GET AJAX call
+	initMap();
 	getAllTests();
 
 	function getAllTests() {
