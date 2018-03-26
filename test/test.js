@@ -5,7 +5,8 @@ var maleResults = require("./functions");
 
 describe("Test type", function() {
     it("Match STD test with sex acts", function() {
-        expect(maleResults()).to.equal("Urine Sample");
+        var testArray = ["test1, test2, test3, test4, test5, test6"];
+        expect(testArray).to.have.members(["test1"]);
     })
 })
 
