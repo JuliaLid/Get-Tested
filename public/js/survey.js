@@ -1,6 +1,6 @@
 
     //add all AJAX calls to capture user's survey info
-    jQuery.noConflict();
+$(document).ready(function(){
 
 
     
