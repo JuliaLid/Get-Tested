@@ -8,62 +8,61 @@ module.exports = function(app) {
 var testArray;
 
   app.post("/api/survey", function(req, res) {
-		var returnedTests;
+	var returnedTests;
 	//Function to create all tests if needed. It calls a helper function that check whether the test table has been created. If not, it will create it.
 
-		db.StdTest.findAll({})
+	db.StdTest.findAll({})
 		.then(function(result) {
-			 createTestsList(result);//It's in local scope
-		});
-		
+			createTestsList(result);
+	});
+	
 	//Function to create a User model based on the request that has been passed	
-  		var sexType = JSON.parse(req.body.sexType);
-  
-		db.User.create({
-			gender: req.body.gender,
-			sexType1: sexType[0],
-			sexType2: sexType[1],
-			sexType3:sexType[2],
-			sexType4:sexType[3],
-			sexType5:sexType[4] ,
-			sexType6:sexType[5] 
-		})
-		.then(function(result) {
-			var gender = result.dataValues.gender;
-			var sexType1 = result.dataValues.sexType1;
-			var sexType2 = result.dataValues.sexType2;
-			var sexType3 = result.dataValues.sexType3;
-			var sexType4 = result.dataValues.sexType4;
-			var sexType5 = result.dataValues.sexType5;
-			var sexType6 = result.dataValues.sexType6;
+	var sexType = JSON.parse(req.body.sexType);
 
-			//pushing all se types into array to pass to the swicth function
-			var allSexTypes = [];
-			allSexTypes.push(sexType1,sexType2,sexType3,sexType4,sexType5,sexType6);
+	db.User.create({
+		gender: req.body.gender,
+		sexType1: sexType[0],
+		sexType2: sexType[1],
+		sexType3:sexType[2],
+		sexType4:sexType[3],
+		sexType5:sexType[4] ,
+		sexType6:sexType[5] 
+	})
+	.then(function(result) {
+		var gender = result.dataValues.gender;
+		var sexType1 = result.dataValues.sexType1;
+		var sexType2 = result.dataValues.sexType2;
+		var sexType3 = result.dataValues.sexType3;
+		var sexType4 = result.dataValues.sexType4;
+		var sexType5 = result.dataValues.sexType5;
+		var sexType6 = result.dataValues.sexType6;
+
+	//pushing all sex types into array to pass to the swicth function
+	var allSexTypes = [];
+	allSexTypes.push(sexType1,sexType2,sexType3,sexType4,sexType5,sexType6);
 			
 		//switch function to route to male or female functions	
-		switch (gender) {
-			case "Male":
-				testArray = maleResults(allSexTypes);
-				break;
-		
-			case "Female":
-			  	testArray = femaleResults(allSexTypes);
-			  	break;
-		}
-
-		db.StdTest.findAll({
-				where:{
-					test_name: testArray
-				}
-			}).then (function(result){
-				res.json(result);
-			});
-		}); //end of sequelize CREATE method
-	}); // end of API POST 
-
+	switch (gender) {
+		case "Male":
+			testArray = maleResults(allSexTypes);
+			break;
 	
-	
+		case "Female":
+			testArray = femaleResults(allSexTypes);
+			break;
+	}
+
+	//Look up recommended tests in the StdTests model
+	db.StdTest.findAll({
+			where:{
+				test_name: testArray
+			}
+		}).then (function(result){
+			res.json(result);
+		});
+	}); //end of sequelize CREATE method
+}); // end of API POST 
+
  
  //=============Helper Functions===================
  //function to check if the table with tests has been created
@@ -151,6 +150,7 @@ var testArray;
 		console.log("line 166 :", testArray);
 		return testArray;
 	};
+	
 	//function to create std model if needed
 	function createTestTable(){
 		var tests =  db.StdTest.bulkCreate ([{

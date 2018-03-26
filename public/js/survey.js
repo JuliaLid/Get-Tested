@@ -1,52 +1,8 @@
 $(document).ready(function(){
 
-    //add all AJAX calls to capture user's survey info
     jQuery.noConflict();
 
-
-    
-
-    jQuery.noConflict();
-    /*
-    var data = {
-        // A labels array that can contain any sort of values
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-        // Our series array that contains series objects or in this case series data arrays
-        series: [
-            [5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
-            [3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
-          ]
-      };
-
-      var options = {
-        width: 600,
-        height: 200,
-        seriesBarDistance: 15
-      };
-
-      var responsiveOptions = [
-        ['screen and (min-width: 641px) and (max-width: 1024px)', {
-          seriesBarDistance: 10,
-          axisX: {
-            labelInterpolationFnc: function (value) {
-              return value;
-            }
-          }
-        }],
-        ['screen and (max-width: 640px)', {
-          seriesBarDistance: 5,
-          axisX: {
-            labelInterpolationFnc: function (value) {
-              return value[0];
-            }
-          }
-        }]
-      ];
-      
-      new Chartist.Bar('.ct-chart', data, options, responsiveOptions);
-      */
-
-
+    //Survey.js functions
     Survey.Survey.cssType = "bootstrap";
     
     //Survey Questions
@@ -109,12 +65,10 @@ $(document).ready(function(){
         onComplete:sendDataToServer,
     });
 
-        //When the post results are received, the results are delievered via GET call    
     survey.onComplete.add(function(result) {
-    
         getTestResults();
     });
-
+    //sending results to the controller via POST call
     function sendDataToServer(survey) {
        
         if (survey.data.sex_female){
@@ -127,7 +81,7 @@ $(document).ready(function(){
             gender:survey.data.gender,
             sexType: JSON.stringify(surveyAnswers)
         };
-     //trying a new callback
+     //POST call
     $.post("/api/survey",surveyAnswers)
     .then(function(data) {
         console.log("Line 93", data);
@@ -142,7 +96,7 @@ $(document).ready(function(){
         $("#surveyResult").append(userTests);
         }); 
     }
-
+    //Dynamically generate the accordion with test results 
     function createTestDisplay(testData) {
         var id = testData.id;
         var testName = testData.test_name;
@@ -181,6 +135,5 @@ $(document).ready(function(){
         
             console.log("line 111 :",result); 
         });
-        
-        }
+    }
 });

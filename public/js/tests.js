@@ -1,4 +1,5 @@
 
+//Google Maps API
 var clinics =[
     ["Red Door Services", 44.974529, -93.262505, "525 Portland Ave Street", "Minneapolis, MN","612-543-5555"],
     ["HCMC Positive Care", 44.970922,-93.25964, "915 S 7th Street", "Minneapolis, MN","612-873-9988"],
@@ -74,56 +75,49 @@ var clinics =[
            scale: 1,
       };
    }
- $(document).ready(function(){
- getAllTests();
-// location.reload();
- function getAllTests() {
-            console.log("I'm a triggered on redirect");
-            $.get("/api/tests", function(result) {
-              var tests = [];
-                for (var j = 0; j<result.length; j++){
-                    tests.push(showTests(result[j]));
-                    //for testing loop
-                    console.log(result[j]);
-                }
-                
-                $(".collapsible").append(tests);
-             
-                console.log("line 69 :",result); //this came from user-api line 102
-                // location.reload();
-            });
-      
-         };
-
-        function showTests(result) {
-           
-           var id = result.id;
-           var testName = result.test_name;
-           var testDescription = result.test_explanation;
-           
-           var cardContainer = $("<li>");
-
-
-           var accordionCard = $("<div>").addClass("collapsible-header blueresults");
-
-           var materialIcon = $("<i>").addClass("material-icons");
-           materialIcon.text("assignment");
-
-           var cardHeader= accordionCard.append(materialIcon).append(testName);
-        //    cardHeader.appendTo(cardContainer); 
-            
-
-            var accordionBody = $("<div>").addClass
-            ("collapsible-body lightresults");
-
-            var newSpan = $("<span>");
-            newSpan.append(testDescription);
-            var fullBody = accordionBody.append(newSpan);
-
-            cardContainer.append(cardHeader).append(fullBody);
-
-            return cardContainer;
-          }
-
  
+   $(document).ready(function(){
+	//Function to display all available test via GET AJAX call
+	getAllTests();
+
+	function getAllTests() {
+		$.get("/api/tests", function(result) {
+		var tests = [];
+			for (var j = 0; j<result.length; j++){
+				tests.push(showTests(result[j]));
+			}
+			
+			$(".collapsible").append(tests);
+		
+			console.log("line 69 :",result); //this came from user-api line 102
+		});
+	};
+
+	//function to dynamically generate test results on return from the database
+	function showTests(result) {
+		
+		var id = result.id;
+		var testName = result.test_name;
+		var testDescription = result.test_explanation;
+		
+		var cardContainer = $("<li>");
+
+		var accordionCard = $("<div>").addClass("collapsible-header blueresults");
+
+		var materialIcon = $("<i>").addClass("material-icons");
+		materialIcon.text("assignment");
+
+		var cardHeader= accordionCard.append(materialIcon).append(testName);
+
+		var accordionBody = $("<div>").addClass
+		("collapsible-body lightresults");
+
+		var newSpan = $("<span>");
+		newSpan.append(testDescription);
+		var fullBody = accordionBody.append(newSpan);
+
+		cardContainer.append(cardHeader).append(fullBody);
+
+		return cardContainer;
+	}
 });

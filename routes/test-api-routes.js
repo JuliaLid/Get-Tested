@@ -9,14 +9,14 @@ module.exports = function(app) {
 //GET route for all tests
   app.get("/api/tests", function(req, res) {
     
-    
+    //function to check if the table with StdTests is available. If not, records will be created to populate a list of tests
     db.StdTest.findAll({ })
-    .then(function(result) {
-      if(result.length ===0) {
-        createTestTable(); 
-      } 
-      res.json(result);
-      });
+		.then(function(result) {
+		if(result.length ===0) {
+			createTestTable(); 
+		} 
+		res.json(result);
+		});
     });
 
     function createTestTable(){
