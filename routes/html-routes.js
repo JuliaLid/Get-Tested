@@ -1,6 +1,3 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
 
 var path = require("path");
 
@@ -31,16 +28,4 @@ module.exports = function(app) {
   app.get("/resources", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/resources.html"));
   });
-
-
-  ///Additional Routes - ONLY to be used after MVP is completed  
-  //==================================================
-  // clinic route loads clinic.html
-  app.get("/clinic", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/clinic.html"));
-  });
-
-
- 
-
 };

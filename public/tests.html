@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Link place holders -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> Google Font if needed -->
     <link rel="icon" href="img/favicon.png" type="image/png" sizes="16x16">
 
     <title>Tests</title>
@@ -31,50 +29,28 @@
     <main>
         <div class="container">
             <div class="row">
-                <div id="results" class="col s12 m6 ">
+                <div id="results" class="col s12 m6">
                     <ul class="collapsible" data-collapsible="accordion">
-                        <!--<li>
-                            <div class="collapsible-header blueresults"><i class="material-icons">assignment</i>Throat Swab</div>
-                            <div class="collapsible-body lightresults"><span>Based on your answers, we recommend that you ask your provider for a throat swab. If you are having oral sex (putting a penis in your mouth) then it’s important to look for gonorrhea and chlamydia in the throat because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your throat, it will not show up on a urine test. </span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header blueresults"><i class="material-icons">assignment</i>Rectal Swab</div>
-                            
-                            <div class="collapsible-body lightresults"><span>Based on your answers, we recommend that you ask your provider for a rectal swab. If you are having anal sex (putting a penis in your butt) then it’s important to look for gonorrhea and chlamydia in the rectum because these infections are “site-specific” meaning they only show up where they’re located. In other words, if you have a gonorrhea or chlamydia infection in your butt, it will not show up on a urine test. 
-                            </span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header blueresults"><i class="material-icons">assignment</i>Urethral Swab</div>
-                            <div class="collapsible-body lightresults"><span>A urethral swab is only recommended for males or penis-bodied individuals who are experiencing symptoms such as discharge. Based on your answers, we recommend that you ask your provider for a urethral swab so that they can prescribe you the appropriate antibiotic. 
-                            </span></div>
-                        </li>-->
+<!--                         dynamic list of tests from result.js -->
                     </ul>
                 </div>
-                <div class="col s2 l1"></div>
-                <div id="map-container" class="col s9 l5 ">
+                <div id="map-container" class="col s12 m6">
                     <div id=background-map>
                     <h4 class="googlemap">Find a nearby clinic</h4>
                     <div id="map"></div>
                 </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                    <div class="col l6 ">
-                        <div id="map"></div>
-                    </div>
-                </div> -->
         </div>
     </main>  
     <footer class="page-footer">
-
         <div class="center-align">
             <div class="col s6 footerleft">   
                 <a class= "giticon" href="https://github.com/JuliaLid/Team-Testing-Buddies-Project" target= "_blank"><i class="fa fa-github" style="font-size:36px;color:white"></i></a>
                     <p class="surveytext">© 2018 TESTED</p>                
-                </div>
             </div>
-        </footer>
-
+        </div>
+    </footer>
    
        <script
   src="https://code.jquery.com/jquery-3.3.1.js"
@@ -82,10 +58,10 @@
   crossorigin="anonymous"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
        <script async defer
-       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAqlrC7gHV_LgkKmKMF7sXetOVuuoxATI&callback=initMap">
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAqlrC7gHV_LgkKmKMF7sXetOVuuoxATI" type="text/javascript">
        </script>
-       <script src="js/result.js"></script> 
+       <script src="js/tests.js"></script> 
    
-   </body>
+</body>
 </html>
 
