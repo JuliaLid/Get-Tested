@@ -24,7 +24,6 @@
 ## Cloning Instructions
 1. Clone the repo.
 2. Run `npm install` to install all dependencies in the root app folder on the local machine.
-* It will include
 3. Use mySQL Workbench to create a database `STDTEST_db`.
     * Tables will be automatically created using  `Sequelize` models when you start the server.
 4. Use bash terminal to run command `npm run watch` or `node server.js` to initialize the server and establish a connection to the database.
